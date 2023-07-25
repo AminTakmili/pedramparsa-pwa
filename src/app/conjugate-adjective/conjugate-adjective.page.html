@@ -1,0 +1,651 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar color="secondary">
+        <ion-buttons slot="start">
+            <ion-back-button [defaultHref]="'/dictionary'" [text]=""
+                [icon]="'arrow-back-outline'">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title>صرف صفت</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <h2>Grammatik</h2>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">POSITIV</b>
+                                </td>
+                                <td>
+                                    {{ positive_pre_masculin }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">KOMPARATIV</b>
+                                </td>
+                                <td>
+                                    {{ comparative_pre_masculin }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">SUPERLATIV</b>
+                                </td>
+                                <td>
+                                    {{ superlative_pre_masculin }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        
+        <ion-segment (ionChange)="segmentChanged($event)" value="positiv">
+            <ion-segment-button value="positiv">
+                <ion-label>Positiv</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="komparativ">
+                <ion-label>Komparativ</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="superlativ">
+                <ion-label>Superlativ</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
+        <ion-row *ngIf="segmentValue === 'positiv'">
+            <ion-col size="12">
+                <h5>
+                    mit bestimmtem Artikel:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ positive_nom_masculin }}</td>
+                                <td>{{ positive_nom_feminin }}</td>
+                                <td>{{ positive_nom_neuter }}</td>
+                                <td>{{ positive_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ positive_gen_masculin }}</td>
+                                <td>{{ positive_gen_feminin }}</td>
+                                <td>{{ positive_gen_neuter }}</td>
+                                <td>{{ positive_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ positive_dat_masculin }}</td>
+                                <td>{{ positive_dat_feminin }}</td>
+                                <td>{{ positive_dat_neuter }}</td>
+                                <td>{{ positive_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ positive_acc_masculin }}</td>
+                                <td>{{ positive_acc_feminin }}</td>
+                                <td>{{ positive_acc_neuter }}</td>
+                                <td>{{ positive_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    mit bestimmtem Artikel
+                    <span>(ein, kein, mein, ...):</span>
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ positive_indef_nom_masculin }}</td>
+                                <td>{{ positive_indef_nom_feminin }}</td>
+                                <td>{{ positive_indef_nom_neuter }}</td>
+                                <td>{{ positive_indef_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ positive_indef_gen_masculin }}</td>
+                                <td>{{ positive_indef_gen_feminin }}</td>
+                                <td>{{ positive_indef_gen_neuter }}</td>
+                                <td>{{ positive_indef_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ positive_indef_dat_masculin }}</td>
+                                <td>{{ positive_indef_dat_feminin }}</td>
+                                <td>{{ positive_indef_dat_neuter }}</td>
+                                <td>{{ positive_indef_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ positive_indef_acc_masculin }}</td>
+                                <td>{{ positive_indef_acc_feminin }}</td>
+                                <td>{{ positive_indef_acc_neuter }}</td>
+                                <td>{{ positive_indef_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    ohne Artikel:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ positive_wo_nom_masculin }}</td>
+                                <td>{{ positive_wo_nom_feminin }}</td>
+                                <td>{{ positive_wo_nom_neuter }}</td>
+                                <td>{{ positive_wo_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ positive_wo_gen_masculin }}</td>
+                                <td>{{ positive_wo_gen_feminin }}</td>
+                                <td>{{ positive_wo_gen_neuter }}</td>
+                                <td>{{ positive_wo_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ positive_wo_dat_masculin }}</td>
+                                <td>{{ positive_wo_dat_feminin }}</td>
+                                <td>{{ positive_wo_dat_neuter }}</td>
+                                <td>{{ positive_wo_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ positive_wo_acc_masculin }}</td>
+                                <td>{{ positive_wo_acc_feminin }}</td>
+                                <td>{{ positive_wo_acc_neuter }}</td>
+                                <td>{{ positive_wo_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    Prädikativ:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="diff">{{ positive_pre_masculin }}</td>
+                                <td>{{ positive_pre_feminin }}</td>
+                                <td>{{ positive_pre_neuter }}</td>
+                                <td>{{ positive_pre_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="segmentValue === 'komparativ'">
+            <ion-col size="12">
+                <h5>
+                    mit bestimmtem Artikel:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ comparative_nom_masculin }}</td>
+                                <td>{{ comparative_nom_feminin }}</td>
+                                <td>{{ comparative_nom_neuter }}</td>
+                                <td>{{ comparative_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ comparative_gen_masculin }}</td>
+                                <td>{{ comparative_gen_feminin }}</td>
+                                <td>{{ comparative_gen_neuter }}</td>
+                                <td>{{ comparative_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ comparative_dat_masculin }}</td>
+                                <td>{{ comparative_dat_feminin }}</td>
+                                <td>{{ comparative_dat_neuter }}</td>
+                                <td>{{ comparative_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ comparative_acc_masculin }}</td>
+                                <td>{{ comparative_acc_feminin }}</td>
+                                <td>{{ comparative_acc_neuter }}</td>
+                                <td>{{ comparative_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    mit bestimmtem Artikel
+                    <span>(ein, kein, mein, ...):</span>
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ comparative_indef_nom_masculin }}</td>
+                                <td>{{ comparative_indef_nom_feminin }}</td>
+                                <td>{{ comparative_indef_nom_neuter }}</td>
+                                <td>{{ comparative_indef_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ comparative_indef_gen_masculin }}</td>
+                                <td>{{ comparative_indef_gen_feminin }}</td>
+                                <td>{{ comparative_indef_gen_neuter }}</td>
+                                <td>{{ comparative_indef_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ comparative_indef_dat_masculin }}</td>
+                                <td>{{ comparative_indef_dat_feminin }}</td>
+                                <td>{{ comparative_indef_dat_neuter }}</td>
+                                <td>{{ comparative_indef_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ comparative_indef_acc_masculin }}</td>
+                                <td>{{ comparative_indef_acc_feminin }}</td>
+                                <td>{{ comparative_indef_acc_neuter }}</td>
+                                <td>{{ comparative_indef_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    ohne Artikel:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ comparative_wo_nom_masculin }}</td>
+                                <td>{{ comparative_wo_nom_feminin }}</td>
+                                <td>{{ comparative_wo_nom_neuter }}</td>
+                                <td>{{ comparative_wo_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ comparative_wo_gen_masculin }}</td>
+                                <td>{{ comparative_wo_gen_feminin }}</td>
+                                <td>{{ comparative_wo_gen_neuter }}</td>
+                                <td>{{ comparative_wo_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ comparative_wo_dat_masculin }}</td>
+                                <td>{{ comparative_wo_dat_feminin }}</td>
+                                <td>{{ comparative_wo_dat_neuter }}</td>
+                                <td>{{ comparative_wo_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ comparative_wo_acc_masculin }}</td>
+                                <td>{{ comparative_wo_acc_feminin }}</td>
+                                <td>{{ comparative_wo_acc_neuter }}</td>
+                                <td>{{ comparative_wo_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    Prädikativ:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="diff">{{ comparative_pre_masculin }}</td>
+                                <td>{{ comparative_pre_feminin }}</td>
+                                <td>{{ comparative_pre_neuter }}</td>
+                                <td>{{ comparative_pre_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="segmentValue === 'superlativ'">
+            <ion-col size="12">
+                <h5>
+                    mit bestimmtem Artikel:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ superlative_nom_masculin }}</td>
+                                <td>{{ superlative_nom_feminin }}</td>
+                                <td>{{ superlative_nom_neuter }}</td>
+                                <td>{{ superlative_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ superlative_gen_masculin }}</td>
+                                <td>{{ superlative_gen_feminin }}</td>
+                                <td>{{ superlative_gen_neuter }}</td>
+                                <td>{{ superlative_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ superlative_dat_masculin }}</td>
+                                <td>{{ superlative_dat_feminin }}</td>
+                                <td>{{ superlative_dat_neuter }}</td>
+                                <td>{{ superlative_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ superlative_acc_masculin }}</td>
+                                <td>{{ superlative_acc_feminin }}</td>
+                                <td>{{ superlative_acc_neuter }}</td>
+                                <td>{{ superlative_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    mit bestimmtem Artikel
+                    <span>(ein, kein, mein, ...):</span>
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ superlative_indef_nom_masculin }}</td>
+                                <td>{{ superlative_indef_nom_feminin }}</td>
+                                <td>{{ superlative_indef_nom_neuter }}</td>
+                                <td>{{ superlative_indef_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ superlative_indef_gen_masculin }}</td>
+                                <td>{{ superlative_indef_gen_feminin }}</td>
+                                <td>{{ superlative_indef_gen_neuter }}</td>
+                                <td>{{ superlative_indef_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ superlative_indef_dat_masculin }}</td>
+                                <td>{{ superlative_indef_dat_feminin }}</td>
+                                <td>{{ superlative_indef_dat_neuter }}</td>
+                                <td>{{ superlative_indef_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ superlative_indef_acc_masculin }}</td>
+                                <td>{{ superlative_indef_acc_feminin }}</td>
+                                <td>{{ superlative_indef_acc_neuter }}</td>
+                                <td>{{ superlative_indef_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    ohne Artikel:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Nom.</b>
+                                </td>
+                                <td>{{ superlative_wo_nom_masculin }}</td>
+                                <td>{{ superlative_wo_nom_feminin }}</td>
+                                <td>{{ superlative_wo_nom_neuter }}</td>
+                                <td>{{ superlative_wo_nom_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Gen.</b>
+                                </td>
+                                <td>{{ superlative_wo_gen_masculin }}</td>
+                                <td>{{ superlative_wo_gen_feminin }}</td>
+                                <td>{{ superlative_wo_gen_neuter }}</td>
+                                <td>{{ superlative_wo_gen_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Dat.</b>
+                                </td>
+                                <td>{{ superlative_wo_dat_masculin }}</td>
+                                <td>{{ superlative_wo_dat_feminin }}</td>
+                                <td>{{ superlative_wo_dat_neuter }}</td>
+                                <td>{{ superlative_wo_dat_plural }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b class="ng-star-inserted">Akk.</b>
+                                </td>
+                                <td>{{ superlative_wo_acc_masculin }}</td>
+                                <td>{{ superlative_wo_acc_feminin }}</td>
+                                <td>{{ superlative_wo_acc_neuter }}</td>
+                                <td>{{ superlative_wo_acc_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <h5>
+                    Prädikativ:
+                </h5>
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th>Maskulinum</th>
+                                <th>Femininum</th>
+                                <th>Neutrum</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="diff">{{ superlative_pre_masculin }}</td>
+                                <td>{{ superlative_pre_feminin }}</td>
+                                <td>{{ superlative_pre_neuter }}</td>
+                                <td>{{ superlative_pre_plural }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

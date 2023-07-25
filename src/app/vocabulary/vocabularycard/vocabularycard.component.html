@@ -1,0 +1,203 @@
+<ion-header class="ion-no-border">
+
+
+	<ion-toolbar>
+
+		<ion-buttons slot="start">
+			<ion-back-button [defaultHref]="'home/vocabulary/'+backId+'/'+lessonId" [text]=""
+				[icon]="'arrow-back-outline'">
+			</ion-back-button>
+		</ion-buttons>
+	<ion-label *ngIf="lessonTitle&&this.isReverse==0"> فلش کارت های درس {{lessonTitle}} </ion-label> 
+	<ion-label *ngIf="lessonTitle&&this.isReverse==1"> ترجمه معکوس درس {{lessonTitle}} </ion-label> 
+   
+	</ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+
+
+	<div *ngIf="frontVocab" class="all-content">
+		<section class="statistics">
+			<div class="study">
+
+
+				<circle-progress
+          [percent]="StydyPercent" 
+          [maxPercent]="100" 
+          [radius]="50"
+          [outerStrokeWidth]="7"
+					[innerStrokeWidth]="0" 
+          [outerStrokeColor]="circleProgressHandeler(StydyPercent)"
+					[innerStrokeColor]="'#fffff'" 
+          [animation]="true"
+          [animationDuration]="300" 
+          [showSubtitle]="true"
+					[subtitle]="'خوانده شده'"
+          [subtitleColor]="'#828282 '" 
+          [subtitleFontSize]="'16'"
+					[subtitleFontWeight]="'400'">
+        </circle-progress>
+			</div>
+			<div class="lerning">
+
+				<circle-progress 
+        [percent]="lerningPercent"
+          [maxPercent]="100" [radius]="50" 
+          [outerStrokeWidth]="7"
+					[innerStrokeWidth]="0" 
+          [outerStrokeColor]="circleProgressHandeler(lerningPercent)"
+					[innerStrokeColor]="'#fffff'" 
+          [animation]="true" 
+          [animationDuration]="300" 
+          [showSubtitle]="false"
+					[showSubtitle]="true" 
+          [subtitle]="'یاد گرفته'"
+          [subtitleColor]="'#828282 '"
+					[subtitleFontSize]="'16'"
+          [subtitleFontWeight]="'400'">
+          </circle-progress>
+			</div>
+
+		</section>
+
+		<section class="cardvocab-slider">
+			<swiper [effect]="'flip'" [grabCursor]="true" [navigation]="true" class="mySwiper" dir="rtl">
+				<ng-template swiperSlide>
+					<div class="main-content">
+						<div class="header-card">
+							<ion-card color={{colorCard}}>
+
+								<span>{{pronunciation}}</span>
+								<ion-card-title>{{frontVocab}}</ion-card-title>
+
+								<ion-card-subtitle>
+									{{role}}
+								</ion-card-subtitle>
+
+							</ion-card>
+
+							<div class="icons">
+								<div class="add">
+									<!-- <ion-button class="icon-button" fill="" shape="round"> -->
+									<div  (click)="addMyWord()"  class="back-icon">
+
+										<ion-icon [ngClass]="{'in-leitner':inMyWord }" name="star"></ion-icon>
+									</div>
+									<!-- </ion-button> -->
+									<div (click)="addLitner()" *ngIf="this.isReverse==0" class="back-icon">
+
+										<ion-icon [ngClass]="{'in-leitner':isLeitner }"  size="small" name="bulb-sharp"></ion-icon>
+									</div>
+								</div>
+
+								<div  class="sound">
+									<div *ngIf="this.isReverse==0"class="back-icon">
+
+										<ion-icon size="small" name="volume-high"></ion-icon>
+									</div>
+                  <div  (click)="addLitner()" *ngIf="this.isReverse==1" class="back-icon">
+
+										<ion-icon size="small" name="bulb-sharp"></ion-icon>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="type">
+
+							<ion-card color={{colorCard}}>
+
+								<ion-card-title> {{role}} </ion-card-title>
+
+							</ion-card>
+
+						</div>
+
+					</div>
+
+
+
+				</ng-template>
+
+
+				<ng-template swiperSlide>
+
+					<div class="back-card-slider">
+
+						<div class="backcard-type">
+
+							<ion-card color={{colorCard}}>
+                <span *ngIf="pronunciation">{{pronunciation}}</span> 
+								<ion-card-title> {{frontVocab}} </ion-card-title>
+							</ion-card>
+
+						</div>
+						<div class="main-content">
+							<div class="header-card">
+								<ion-card color={{colorCard}}>
+
+									<span *ngIf="pronunciation">{{pronunciation}}</span>
+									<ion-card-title>{{backVocab}}</ion-card-title>
+
+									<ion-card-subtitle>
+										{{role}}
+                    
+									</ion-card-subtitle>
+
+								</ion-card>
+
+								<div *ngIf="false" class="icons">
+									<div class="add">
+										<!-- <ion-button class="icon-button" fill="" shape="round"> -->
+										<div  (click)="addMyWord()" class="back-icon">
+
+											<ion-icon [ngClass]="{'in-leitner':inMyWord }" name="star"></ion-icon>
+										</div>
+										<!-- </ion-button> -->
+										<div  (click)="addLitner()" class="back-icon">
+
+											<ion-icon size="small" name="bulb-sharp"></ion-icon>
+										</div>
+									</div>
+
+									<div class="sound">
+										<div class="back-icon">
+
+											<ion-icon size="small" name="volume-high"></ion-icon>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+
+
+						</div>
+
+						<div class="backcard-button">
+
+							<ion-button (click)="submitWord(1)" color="success" shape="round">
+								بلدم
+							</ion-button>
+
+							<ion-button  (click)="submitWord(0)" color="danger" shape="round">
+								بلد نیستم
+							</ion-button>
+
+						</div>
+					</div>
+
+				</ng-template>
+
+
+			</swiper>
+
+		</section>
+
+	</div>
+</ion-content>

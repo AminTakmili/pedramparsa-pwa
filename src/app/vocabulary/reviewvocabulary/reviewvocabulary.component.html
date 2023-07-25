@@ -1,0 +1,83 @@
+
+<ion-header class="ion-no-border">
+ 
+  <button class="ion-hide" #getNewData (click)="onClick()" >
+    
+  </button>
+
+  <ion-toolbar >
+    <ion-buttons   slot="start">
+        <!-- <ion-button  >
+            <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+        </ion-button> -->
+    
+        <ion-back-button
+        [defaultHref]="'home/vocabulary/'+backId+'/'+id"
+        [text]=""
+        [icon]="'arrow-back-outline'">
+    </ion-back-button>
+      </ion-buttons>
+    <ion-title>واژگان {{lessonTitle}} </ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+
+<ion-content>
+  <!-- (observerUpdate)="true" -->
+<swiper
+#swiperRef
+(slideChange)="slideChangeHandeler($event)"
+(update)="onClick()"
+dir="rtl"
+    [slidesPerView]="1.25"
+    [centeredSlides]="true"
+    [observeSlideChildren]="true"
+    [observeParents]="true"
+  
+    [spaceBetween]="30"
+    class="mySwiper"
+    [pagination]="{
+      clickable: true
+    }"
+  >
+    <ng-template *ngFor="let item of vocabsList" swiperSlide>
+      <app-word-card [wordArray]="item"></app-word-card>    
+      </ng-template>
+
+      <!-- <ng-template *ngIf="vocabsList&&vocabsList.length!=0" swiperSlide> 
+        <div class="container">
+        
+      </div>
+      </ng-template> -->
+    <!-- <ng-template swiperSlide> <div class="container">
+        
+      </div>
+      </ng-template
+    ><ng-template swiperSlide> <div class="container">
+        
+      </div>
+      </ng-template
+    ><ng-template swiperSlide> <div class="container">
+        
+      </div>
+      </ng-template
+    ><ng-template swiperSlide> <div class="container">
+        
+      </div>
+      </ng-template
+    ><ng-template swiperSlide> <div class="container">
+        
+      </div>
+      </ng-template
+    ><ng-template swiperSlide> <div class="container">
+        
+      </div>
+      </ng-template
+    ><ng-template swiperSlide> <div class="container">
+        
+      </div>
+    </ng-template> -->
+</swiper>
+
+</ion-content>

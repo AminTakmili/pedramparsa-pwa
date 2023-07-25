@@ -1,0 +1,80 @@
+
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar >
+    <ion-buttons   slot="start">
+        <!-- <ion-button  >
+            <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+        </ion-button> -->
+        <ion-back-button
+        [defaultHref]="'home/vocabulary'"
+        [text]=""
+        [icon]="'arrow-back-outline'">
+    </ion-back-button>
+    </ion-buttons>
+    <ion-title>واژه های کتاب منشن</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  
+  <!-- (click)="buttonClick()" -->
+  <ion-item    *ngFor="let i of data" lines="none"  [routerLink]="[i['id']]"  button  detail>
+    
+
+     <!-- <circle-progress
+  [percent]="percent"
+  [maxPercent]="100"
+  [radius]="25"
+  [outerStrokeWidth]="7"
+  [innerStrokeWidth]="0"
+  [outerStrokeColor]="color"
+  [innerStrokeColor]="'#fffff'"
+  [animation]="true"
+  [animationDuration]="300"
+  [showSubtitle]="false"
+  
+  
+
+  
+></circle-progress> -->
+
+<circle-progress
+[percent]="i['read-vocab-percent']"
+[maxPercent]="100"
+[radius]="25"
+[outerStrokeWidth]="7"
+[innerStrokeWidth]="0"
+[outerStrokeColor]="circleProgressHandeler(i['read-vocab-percent'])"
+[innerStrokeColor]="'#fffff'"
+[animation]="true"
+[animationDuration]="300"
+[showSubtitle]="false"
+
+        ></circle-progress>
+<ion-label class="ion-text-wrap">
+      <ion-text>
+        <h3>{{i['title']}}</h3>
+      </ion-text>
+      <ion-text color="secondary">
+        <p>
+          {{i['read_vocab_count'] }} کلمه از {{i['vocabs_count']}} خوانده شده 
+        </p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  
+     
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="لطفا صبر کنید..."
+      
+      >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+ 
+</ion-content>
+
+<!-- [lazy]="true" [responsive]="true" -->

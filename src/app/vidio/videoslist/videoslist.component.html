@@ -1,0 +1,65 @@
+
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar >
+    <ion-buttons   slot="start">
+      <ion-back-button
+      [defaultHref]="'home/video/'+bookId"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+<ion-content>
+  <!-- [routerLink]="['/grammer/book/'+item.id]" -->
+  <!-- [routerLink]="[id]" -->
+
+  <div class="serch">
+    
+    <ion-searchbar placeholder="جستجو" (ionClear)="serchInputIsClean()" (ionChange)="serchHandeler($event)" enterkeyhint="search" [debounce]="450"  showCancelButton="focus"></ion-searchbar>
+    <ion-progress-bar *ngIf="serchLoading" type="indeterminate"></ion-progress-bar>
+  </div>
+
+
+  <ion-grid >
+
+    <ion-row >
+      <ion-col  *ngFor="let item of data; " size="5" [routerLink]="[item['id']]"  >
+
+          <ion-card  >
+            <ion-card-header>
+              <!-- <ion-img [src]="'src/assets/img/no-image-icon-23485.png'"></ion-img> -->
+              <!-- <ion-img [alt]="'image of phone card'" [src]="'../../assets/img/no-image-icon-23485.png'"></ion-img> -->
+              <ion-img *ngIf="!item['thumbnail_image']?.path" [src]="'../../../assets/img/novidio.jpg'"></ion-img>
+              <ion-img *ngIf="item['thumbnail_image']?.path" [src]="item['thumbnail_image']?.path"></ion-img>
+              <ion-icon name="play"></ion-icon>
+            </ion-card-header>
+            
+            <ion-card-title>
+              <ion-text >
+                <span class="titel"> {{item['title']}}</span>
+                <span  class="vidio-time">{{item['file_duration']}}</span>
+              </ion-text>
+              </ion-card-title>
+            <!-- <ion-card-content>
+              
+            </ion-card-content> -->
+          </ion-card>
+      </ion-col>
+      
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="لطفا صبر کنید...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+

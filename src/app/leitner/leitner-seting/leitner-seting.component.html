@@ -1,0 +1,56 @@
+<ion-header color="tertiary" class="ion-no-border">
+  <ion-toolbar color="tertiary">
+    <!-- <ion-title>کلمات لایتنر</ion-title> -->
+    <ion-buttons slot="start">
+      <ion-button (click)="modalController.dismiss()">
+        <ion-icon slot="start" name="close"></ion-icon>
+        تنظیمات لایتنر   
+         </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item-group class="report">
+    
+    <ion-item lines="none">
+      <label class="ion-padding several-day-text" >امروز ، روز <span class="day-num">{{severalDay}}</span> است که با لایتنر یاد میگیرید</label>
+      <!-- <ion-label>Label</ion-label> -->
+    </ion-item>
+    <ion-item  *ngIf="data" lines="inset">
+   تعداد کلمات موجود در لایتنر : <span class="report-num" *ngIf="data['words_in_leitner_count']" > {{data['words_in_leitner_count']}}</span>
+    </ion-item>
+    <ion-item  *ngIf="data">
+   تعداد کلمات یاد گرفته شده از لایتنر :  <span class="report-num" *ngIf="data['learned_words_count']" >{{data['learned_words_count']}}</span> 
+    </ion-item>
+    <ion-item  *ngIf="data" lines="none">
+   تعداد کلمات در حال یادگیری موجود در لایتنر : <span class="report-num" *ngIf="data['learning_words_count']" >{{data['learning_words_count']}}</span> 
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group class="seting">
+    <!-- <ion-item-divider>
+      <ion-label>Label</ion-label>
+    </ion-item-divider>
+   -->
+    <ion-item>
+   <ion-item lines="none">
+     <ion-label position="floating">تعدا لغات مرور روزانه</ion-label>
+     <ion-select (ionChange)="setDailyWordsCount($event)"	ok-text="تایید" cancel-text="انصراف" [value]="DailyWordscount" multiple="false">
+       <ion-select-option *ngFor="let item  of listOfNumber" [value]="item">{{item}} </ion-select-option>
+       <!-- <ion-select-option value="hawaii">Hawaii</ion-select-option> -->
+     </ion-select>
+     <ion-spinner *ngIf="DailyWordsLoading" name="lines-small"></ion-spinner>
+   </ion-item>
+    </ion-item>
+
+   
+      <ion-item>
+        <ion-label>نمایش یاداوری</ion-label>
+        <ion-toggle></ion-toggle>
+      </ion-item>
+    
+
+    <ion-item (click)="clearAll()" lines="none">
+      <ion-label>پاک کردن کل لایتنر</ion-label>
+    </ion-item>
+  </ion-item-group>
+</ion-content>

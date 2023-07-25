@@ -1,0 +1,104 @@
+ion-header{
+    ion-toolbar{
+        border-radius: 0 0 30px 30px;
+
+    }
+}
+
+ion-content{
+    .dontHaveSupports{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        ion-img{
+            height: 50%;
+            width: 50%;
+            max-height: 300px;
+            max-width: 300px;
+            object-fit: contain;
+            object-position: center;
+
+        }
+        ion-button{
+            width: 50%;
+            height: 45px;
+            margin-top: 20px;
+        }
+
+    }
+
+    .haveSupports{
+        ion-list{
+            margin-bottom: 20px;
+                ion-item {
+                            margin: 10px 0;
+                            --background: white;
+                            .detail{
+
+                                ion-chip {
+                                    padding: 17px 20px;
+                                    margin-top: 10px;
+                                    font-size: 1.3rem;
+                                    font-weight: 300;
+                                
+                                }
+                            }
+                            .date{
+                                height: 100%;
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-direction: column;
+                                color: rgba(0, 0, 0, 0.41);
+                                font-size: 1.2rem;
+                                font-weight: 200;
+                            }
+                            &.waiting {
+                                .detail{
+                                    ion-chip {
+                                        
+                                    background-color: #DEDEDE;
+                                    color: #646363;
+                                    }
+                                }
+                                
+                            }
+                            &.answered-usr {
+                                .detail{
+                                    ion-chip {
+                                        background-color:#FF8700;
+                                        color: white;
+                                        
+                                    }
+                                }   
+                            }
+                            &.answered-admin {
+                                .detail{
+                                    ion-chip {
+                                        background-color: #689F38;
+                                        color: white;
+                                        // color: var(--ion-color-dark);
+                                    }
+                                }   
+                            }
+                            &.close {
+                                .detail{
+                                    ion-chip {
+                                        background-color: var(--ion-color-tertiary);
+                                        color: white;
+                                        // color: var(--ion-color-dark);
+                                    }
+                                }   
+                            }
+                }
+        }
+        
+
+    }
+}

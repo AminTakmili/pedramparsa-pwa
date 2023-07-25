@@ -1,0 +1,15 @@
+ion-card{
+    width: 100%;
+    border-left: 8px solid var(--ion-color-mywords-background);
+    height: 75px;
+    ion-card-title{
+        font-weight: 300;
+        font-size: 1.7rem;
+    }
+    ion-card-subtitle{
+
+    }
+    ion-icon {
+        height: 70%;
+    }
+}

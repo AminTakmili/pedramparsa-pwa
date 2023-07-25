@@ -1,0 +1,96 @@
+<ion-header class="ion-no-border">
+	<ion-toolbar>
+		<ion-title>بیشتر</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-item [routerLink]="['support']" button detail lines="none" [detail]="true">
+
+			<ion-icon slot="start" name="headset-outline"></ion-icon>
+			پشتیبانی
+			
+		</ion-item>
+		<ion-item [routerLink]="['contact']" lines="none" button [detail]="true">
+		
+			<ion-icon slot="start" src="../../assets/icon/Group 7251.svg"></ion-icon>
+			تماس با ما
+		
+		</ion-item>
+		<ion-item (click)="openAboutusModal()" lines="none" button [detail]="true">
+	
+			<ion-icon slot="start" src="../../assets/icon/customers (1).svg"></ion-icon>
+			درباره ما
+
+		</ion-item>
+		<ion-item (click)="openRuleModal()" lines="none" button [detail]="true">
+			<!-- <ion-buttons slot="start">
+    <ion-button >-->
+			<ion-icon name="receipt-outline"></ion-icon>
+			قوانین و ضوابط
+			<!-- </ion-button>
+  </ion-buttons> -->
+		</ion-item>
+
+		<ion-accordion-group class="more-accordion">
+			<ion-accordion toggle-icon="chevron-forward-outline" value="first">
+				<ion-item slot="header" lines="none" button [detail]="true">
+					<!-- <ion-buttons slot="start">
+    <ion-button >-->
+					<ion-icon name="phone-portrait-outline"></ion-icon>
+					تغییر شماره همراه
+					<!-- </ion-button>
+  </ion-buttons> -->
+				</ion-item>
+
+				<div class="ion-padding" slot="content">
+					<!-- <ion-item> -->
+
+					<!-- <ion-label position="floating">شماره همراه</ion-label> -->
+					<!-- <ion-input type="text" ></ion-input> -->
+					<!-- <ion-input type="text" placeholder="شماره همراه را وارد کنید"></ion-input> -->
+
+					<form [formGroup]="phoneNumberForm" (submit)="submitPhoneNumberForm()" action="">
+						<ion-item lines="none">
+							<div class="form-input ">
+								<!-- <label>عنوان درخواست</label> -->
+								<!-- <ion-input type="text" placeholder="Awesome Input"></ion-input> -->
+								<ion-label position="floating">شماره همراه</ion-label>
+								<ion-input formControlName="new_mobile" type="text"></ion-input>
+								<span class="hint">
+									شماره همراه جدید را وارد کنید
+								</span>
+								<span class="error">
+
+									<app-validator
+										*ngIf="phoneNumberForm.controls['new_mobile'].touched || phoneNumberForm.controls['new_mobile'].dirty"
+										[control]="phoneNumberForm.controls['new_mobile']"
+										[controlName]="'شماره همراه'"> -->
+									</app-validator>
+								</span>
+
+								<ion-button type="submit" expand="block" shape="round">
+									ثبت
+								</ion-button>
+							</div>
+						</ion-item>
+					</form>
+					<!-- </ion-item> -->
+				</div>
+			</ion-accordion>
+		</ion-accordion-group>
+	
+		<ion-item (click)="shareWithFriends()" slot="header" lines="none" button [detail]="true">
+
+			<ion-icon name="share-social-outline"></ion-icon>
+			معرفی به دوستان
+		</ion-item>
+		<ion-item (click)="presentAlertLogout()" lines="none" button [detail]="true">
+
+			<ion-icon name="log-out-outline"></ion-icon>
+			خروج از حساب کاربری
+		</ion-item>
+
+	</ion-list>
+</ion-content>

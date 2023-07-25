@@ -1,0 +1,98 @@
+@import 'src/theme/_extend.scss';
+// @use "src/theme/_extend.scss" as style;
+%card-style{
+  
+   
+   cursor: pointer;
+      width: 40%;
+      height: 40%;
+      margin: 1rem;
+      flex-grow: 1;
+      border-radius: 15px;
+      background-color: var(--ion-color-light);
+      @extend %box-shadow-1;
+      max-height: 160px;
+      max-width: 130px;
+      min-height: 160px;
+      min-width: 120px;
+      // width: clamp(120px, 40%, 130px);
+      margin: min(24px,5%,4vw);
+      display: flex;
+      justify-content: center;
+      position: relative;
+      .back-svg-card{
+         width: 75%;
+         height: 59%;
+         position: absolute;
+         top: -20px;
+         border-radius: 15px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .text{
+         bottom: 15px;
+         position: absolute;
+         text-align: center;
+      }
+
+      
+
+    
+     
+   
+}
+ion-content{
+
+   .all-content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+
+      .center-content{
+       height: 80%;
+       width: 80%;
+       display: flex;
+       flex-wrap: wrap;
+      //  margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      // flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      .back-card-listening{
+         @extend %card-style;
+         .back-svg-card{
+            background-color: var(--ion-color-readings-background);
+         }
+         
+      }
+      .back-card-speaking{
+         @extend %card-style;
+         .back-svg-card{
+            background-color: var(--ion-color-videos-background);
+         }
+         
+      }
+      .back-card-writing{
+         @extend %card-style;
+         .back-svg-card{
+            background-color: var(--ion-color-mywords-background);
+         }
+         
+      }
+      .back-card-Reading{
+         @extend %card-style;
+         .back-svg-card{
+            background-color: var(--ion-color-grammar-background);
+         }
+         
+      }
+
+   
+        
+       }
+   }
+}

@@ -1,0 +1,105 @@
+// ion-footer{
+//     ion-toolbar{
+//         ion-buttons{
+//             width: 100%;
+//             display: flex;
+//             justify-content: space-between;
+            
+//         }
+//     }
+// }
+
+@import '../../theme/extend';
+// @mixin background_img_card($color) {
+//     position: absolute;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: var($color);
+//     height: 70%;
+//     width: 70%;
+//     bottom: 46%;
+//     border-radius: 15px;
+// }
+ion-content{
+    .card-grid-grup{
+       
+        height: 100%;
+        width: 100%;
+        ion-row{
+        height: 100%;
+        width: 100%; 
+        margin-top: 1rem;
+        ion-col{
+             margin-bottom: 2rem;
+             padding: .5rem;
+             outline: none;
+        
+             
+             cursor: pointer;
+
+                .background_home_card{
+                                background-color: var(--ion-color-light);
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 15px;
+                                @extend %box-shadow-1;
+                                display: flex;
+                                justify-content: center;
+                                min-width: 142px;
+                                max-width: 150px;
+                                min-height: 106px;
+                                max-height: 120px;
+                                margin: 0 auto;
+
+                                position: relative;
+                                .background_img_card{
+                                    position: absolute;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    // background-color: var($color);
+                                    height: 70%;
+                                    width: 70%;
+                                    bottom: 41%;
+                                    border-radius: 15px;
+                                }
+                                    .background_img_grammar{
+                                        background-color:var(--ion-color-grammar-background)
+                                    }
+                                    .background_img_vocabulary{
+                                        background-color: var(--ion-color-vocabulary-background)
+                                    }
+                                    .background_img_readings{
+                                        background-color: var( --ion-color-readings-background)
+                                    }
+                                    .background_img_videos{
+                                        background-color: var(--ion-color-videos-background)
+                                    }
+                                    .background_img_mywords{
+                                        background-color: var( --ion-color-mywords-background)
+                                    }
+                                    .background_img_exams{
+                                        background-color: var(--ion-color-exams-background)
+                                    }
+                                    .background_img_textbooks{
+                                        background-color: var(--ion-color-textbooks-background)
+                                    }
+                                    .background_img_audiobooks{
+                                        background-color: var( --ion-color-audiobooks-background)
+                                    }
+                                    span{
+                                        bottom: 7%;
+                                        position: absolute;
+                                    }
+                            }
+        }
+        
+
+            
+
+        }
+       
+        
+    }
+}

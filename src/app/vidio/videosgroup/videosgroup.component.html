@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar color="videos-background">
+    <ion-buttons   slot="start">
+      <!-- <ion-button  >
+          <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+      </ion-button> -->
+  
+      <ion-back-button
+      [defaultHref]="'home/video'"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+<ion-content class="ion-align-items-center">
+  <ion-grid >
+
+    <ion-row  *ngIf="!loading" >
+      <ion-col *ngFor="let item of data; " size="5"  pull=".3" push=".3" >
+
+        <app-primarycard  [loading]="loading" [item]='item'></app-primarycard>
+      </ion-col>
+      
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="لطفا صبر کنید...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-row>
+    <ion-row  *ngIf="loading" >
+      <ion-col *ngFor="let domy of ' '.repeat(4).split(''); " size="5"  pull=".3" push=".3" >
+
+        <app-primarycard  [loading]="loading"  [item]="{}"></app-primarycard>
+      </ion-col>
+      
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

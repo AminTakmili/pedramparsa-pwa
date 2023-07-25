@@ -1,0 +1,62 @@
+<!-- {{isLoading}} -->
+<!-- [routerLink]="['/grammer/book/'+child.id]" -->
+<ng-template [ngIf]="!isLoading">
+<ion-card *ngIf="child&&child['child_id']" [routerLink]="[child['child_id']]" >
+  <ion-card-header>
+    <!-- <ion-img [src]="'src/assets/img/no-image-icon-23485.png'"></ion-img> -->
+    <ion-img *ngIf="!child['image']||child['image'].length==0" [alt]="child['child_title']" [src]="'../../assets/img/no-image-icon-23485.png'"></ion-img>
+    <ion-img *ngIf="child['image']&&child['image'].length!=0" [alt]="child['child_title']" [src]="child['image'].path"></ion-img>
+    
+  </ion-card-header>
+  
+  <ion-card-title> {{child['child_title']}}</ion-card-title>
+  <!-- <ion-card-content>
+    
+  </ion-card-content> -->
+</ion-card>
+<ion-card *ngIf="child&&!child['child_id']&&child['id']" [routerLink]="[child['id']]" >
+  <ion-card-header>
+    <!-- <ion-img [src]="'src/assets/img/no-image-icon-23485.png'"></ion-img> -->
+    <ion-img *ngIf="!child['image']||child['image'].length==0" [alt]="child['child_title']" [src]="'../../assets/img/no-image-icon-23485.png'"></ion-img>
+    <ion-img *ngIf="child['image']&&child['image'].length!=0"  [alt]="child['child_title']" [src]="child['image'].path"></ion-img>
+    
+  </ion-card-header>
+  
+  <ion-card-title> {{child['title']}}</ion-card-title>
+  <!-- <ion-card-content>
+    
+  </ion-card-content> -->
+  
+<ion-card  *ngIf="!child">
+  <ion-card-header>
+    <ion-img [src]="'/assets/img/data-not-found-1965034-1662569.webp'"></ion-img>
+    <ion-card-title>متاسفانه مطلبی وجود ندارد
+    </ion-card-title>
+    <!-- <ion-card-subtitle></ion-card-subtitle> -->
+  </ion-card-header>
+
+</ion-card>
+
+
+</ion-card>
+</ng-template>
+<!-- &&child!={'':''} -->
+<div *ngIf="isLoading" class="ion-padding custom-skeleton type-exam loading">
+  
+ <ion-grid>
+    <!-- *ngFor="let domy of ' '.repeat(3).split('')"  -->
+   <div class="loading-cards">
+     <ion-row >
+       <!-- *ngFor="let domy of ' '.repeat(2).split('')" -->
+       <ion-col  size="3"  >
+         <div class="loding-card">
+           
+           <ion-skeleton-text animated class=" loading-card-body"></ion-skeleton-text>
+           <ion-skeleton-text animated class=" loading-card-img"></ion-skeleton-text>
+           <ion-skeleton-text animated class="titel-loding"></ion-skeleton-text>
+       </div>
+     </ion-col>
+   </ion-row>
+ </div>
+  </ion-grid>
+</div>

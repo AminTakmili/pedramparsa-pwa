@@ -1,0 +1,107 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-grid  fixed>
+      <ion-row>
+        <ion-col size="3">
+          <ion-avatar>
+            <img [src]="'../../../../../../assets/img/admin.webp 1x.webp 1x'" />
+          </ion-avatar>
+        </ion-col>
+        
+        <ion-col size="7.56">
+          <span class="title">
+            ادمین
+          </span>
+          <span class="sub-title">
+        {{title}}
+          </span>
+          
+        </ion-col>
+        <ion-col size="1">
+          <ion-buttons  [routerLink]="['/more/support']">
+            <ion-button >
+              <ion-icon name="chevron-forward"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-col>
+       
+      </ion-row>
+    </ion-grid>
+    
+  
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <ion-list> -->
+    <!-- <section > -->
+
+   
+    <ion-item-group *ngFor="let item of supportlist; index as i; " [ngClass]="{'user':!item['is_admin'],'admin':item['is_admin']}" >
+      <ion-item  lines="none">
+        <div class="back_chat">
+
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="11">
+                <ion-text >
+                <p>
+                {{item['content']}}
+                </p>
+                </ion-text>
+              </ion-col>
+            
+            </ion-row>
+            <ion-row class="date-row">
+            
+              <ion-col  *ngIf="!item['is_admin']"  size="1">
+                <div *ngIf="!item['status']">
+                  <ion-icon *ngIf="statusNumber!=0" [ngClass]="{'read-icon':statusNumber==1}" class="read-icon"  name="checkmark-done-sharp"></ion-icon>
+                  <ion-icon *ngIf="statusNumber==0" name="checkmark-sharp"></ion-icon>
+
+                </div>
+                <div *ngIf="item['status']">
+                  <!-- <ion-icon *ngIf="statusNumber=1 item['status']!=0" [ngClass]="{'read-icon':item['status']==1}" class="read-icon"  name="checkmark-done-sharp"></ion-icon> -->
+                  <ion-icon *ngIf="statusNumber==1&&item['status']==0||item['status']==2" name="checkmark-sharp"></ion-icon>
+  
+                </div>
+              </ion-col>
+              <ion-col size="11">
+                <span class="date">
+                  {{item['c_date']}}
+                </span>
+              </ion-col> 
+            </ion-row>
+          </ion-grid>
+
+        </div>
+      </ion-item>
+    </ion-item-group>
+  
+   <!-- </section> -->
+
+  <!-- </ion-list> -->
+</ion-content>
+<ion-footer>
+  <form [formGroup]="sendReplyForme" (submit)="sendReply()">
+     <ion-toolbar>
+   <ion-grid fixed>
+     <ion-row>
+       <ion-col size="10">
+        <!-- <ion-input type="text" ></ion-input> -->
+        <ion-textarea [formControlName]="'content'" col="20" rows="1"  auto-grow="true"  placeholder=" نوشتن پیام"></ion-textarea>
+      
+      </ion-col>
+       <ion-col size="2">
+         <ion-buttons (click)="sendReply()" >
+           <ion-button>
+            <ion-icon  name="send-sharp"></ion-icon>
+           </ion-button>
+         </ion-buttons>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+    
+  </ion-toolbar>
+  </form>
+ 
+</ion-footer>

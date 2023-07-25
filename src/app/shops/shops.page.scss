@@ -1,0 +1,41 @@
+ion-content{
+    ion-card{
+        margin: 15px auto;
+        
+        ion-card-header{
+            ion-card-title{
+                --color:var(--ion-color-tertiary);
+
+            }
+        }
+        ion-card-content{
+            ion-buttons{
+                margin: 10px 1px;
+                ion-button{
+                    width: 100%;
+                    &.dont-buy{
+                        --background: var(--ion-color-success);
+                        --color:#f5f5f5;
+
+                        .text-shoping{
+                            flex-grow: 2;
+                        }
+                    }
+                    &.buy{
+
+                        width: 100%;
+                        border: 1px solid #746e6e4f;
+                        border-radius: 150px;
+                        opacity: 0.7;
+                        span{
+                            flex-grow: 2;
+                        }
+                    }
+                    // .text-price{
+                    //     // color: var();
+                    // }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+:root {
+	--ion-color-grammar-background: var(--ion-color-danger);
+	--ion-color-grammar-background-rgb: var(--ion-color-danger-rgb);
+	--ion-color-grammar-background-contrast: #FFFFFF;
+	--ion-color-grammar-background-contrast-rgb:255,255,255;
+	--ion-color-grammar-background-shade: var(--ion-color-danger-shade);
+	--ion-color-grammar-background-tint: var(--ion-color-danger-tint);
+
+    --ion-color-vocabulary-background: #495769;
+	--ion-color-vocabulary-background-rgb: 73,87,105;
+	--ion-color-vocabulary-background-contrast: #ffffff;
+	--ion-color-vocabulary-background-contrast-rgb: 255,255,255;
+	--ion-color-vocabulary-background-shade: #404d5c;
+	--ion-color-vocabulary-background-tint: #5b6878;
+
+    --ion-color-readings-background: var(--ion-color-warning);
+	--ion-color-readings-background-rgb:var(--ion-color-warning-rgb);
+	--ion-color-readings-background-contrast: #FFFFFF;
+	--ion-color-readings-background-contrast-rgb: 255,255,255;
+	--ion-color-readings-background-shade: var(-ion-color-warning-shade);
+	--ion-color-readings-background-tint: var(--ion-color-warning-tint);
+
+    --ion-color-videos-background: #8DBB7F;
+	--ion-color-videos-background-rgb: 141,187,127;
+	--ion-color-videos-background-contrast: #FFFFFF;
+	--ion-color-videos-background-contrast-rgb:255,255,255;
+	--ion-color-videos-background-shade: #7ca570;
+	--ion-color-videos-background-tint: #98c28c;
+
+    --ion-color-mywords-background: #3FAED1;
+	--ion-color-mywords-background-rgb: 63,174,209;
+	--ion-color-mywords-background-contrast:#FFFFFF;
+	--ion-color-mywords-background-contrast-rgb: 255,255,255;
+	--ion-color-mywords-background-shade: #3799b8;
+	--ion-color-mywords-background-tint: #52b6d6;
+
+    --ion-color-exams-background: var(--ion-color-secondary);
+	--ion-color-exams-background-rgb:var(--ion-color-secondary-rgb);
+	--ion-color-exams-background-contrast:#FFFFFF;
+	--ion-color-exams-background-contrast-rgb: var(--ion-color-secondary-contrast-rgb);
+	--ion-color-exams-background-shade: var(--ion-color-secondary-shade);
+	--ion-color-exams-background-tint: var(--ion-color-secondary-tint);
+
+    --ion-color-textbooks-background: #878787;
+	--ion-color-textbooks-background-rgb: 135,135,135;
+	--ion-color-textbooks-background-contrast: #FFFFFF;
+	--ion-color-textbooks-background-contrast-rgb:255,255,255;
+	--ion-color-textbooks-background-shade: #777777;
+	--ion-color-textbooks-background-tint: #939393;
+
+    --ion-color-audiobooks-background: #A972B5;
+	--ion-color-audiobooks-background-rgb: 169,114,181;
+	--ion-color-audiobooks-background-contrast: #FFFFFF;
+	--ion-color-audiobooks-background-contrast-rgb: 255,255,255;
+	--ion-color-audiobooks-background-shade: #95649f;
+	--ion-color-audiobooks-background-tint: #b280bc;
+
+}
+
+.ion-color-grammar-background {
+	--ion-color-base: var(--ion-color-grammar-background);
+	--ion-color-base-rgb: var(--ion-color-grammar-background-rgb);
+	--ion-color-contrast: var(--ion-color-grammar-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-grammar-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-grammar-background-shade);
+	--ion-color-tint: var(--ion-color-grammar-background-tint);
+}
+.ion-color-vocabulary-background {
+	--ion-color-base: var(--ion-color-vocabulary-background);
+	--ion-color-base-rgb: var(--ion-color-vocabulary-background-rgb);
+	--ion-color-contrast: var(--ion-color-vocabulary-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-vocabulary-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-vocabulary-background-shade);
+	--ion-color-tint: var(--ion-color-vocabulary-background-tint);
+}
+.ion-color-readings-background {
+	--ion-color-base: var(--ion-color-readings-background);
+	--ion-color-base-rgb: var(--ion-color-readings-background-rgb);
+	--ion-color-contrast: var(--ion-color-readings-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-readings-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-readings-background-shade);
+	--ion-color-tint: var(--ion-color-readings-background-tint);
+}
+
+.ion-color-videos-background {
+	--ion-color-base: var(--ion-color-videos-background);
+	--ion-color-base-rgb: var(--ion-color-videos-background-rgb);
+	--ion-color-contrast: var(--ion-color-videos-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-videos-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-videos-background-shade);
+	--ion-color-tint: var(--ion-color-videos-background-tint);
+}
+
+.ion-color-mywords-background {
+	--ion-color-base: var(--ion-color-mywords-background);
+	--ion-color-base-rgb: var(--ion-color-mywords-background-rgb);
+	--ion-color-contrast: var(--ion-color-mywords-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-mywords-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-mywords-background-shade);
+	--ion-color-tint: var(--ion-color-mywords-background-tint);
+}
+
+.ion-color-exams-background {
+	--ion-color-base: var(--ion-color-exams-background);
+	--ion-color-base-rgb: var(--ion-color-exams-background-rgb);
+	--ion-color-contrast: var(--ion-color-exams-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-exams-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-exams-background-shade);
+	--ion-color-tint: var(--ion-color-exams-background-tint);
+}
+
+.ion-color-textbooks-background {
+	--ion-color-base: var(--ion-color-textbooks-background);
+	--ion-color-base-rgb: var(--ion-color-textbooks-background-rgb);
+	--ion-color-contrast: var(--ion-color-textbooks-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-textbooks-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-textbooks-background-shade);
+	--ion-color-tint: var(--ion-color-textbooks-background-tint);
+}
+
+.ion-color-audiobooks-background {
+	--ion-color-base: var(--ion-color-audiobooks-background);
+	--ion-color-base-rgb: var(--ion-color-audiobooks-background-rgb);
+	--ion-color-contrast: var(--ion-color-audiobooks-background-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-audiobooks-background-contrast-rgb);
+	--ion-color-shade: var(--ion-color-audiobooks-background-shade);
+	--ion-color-tint: var(--ion-color-audiobooks-background-tint);
+}

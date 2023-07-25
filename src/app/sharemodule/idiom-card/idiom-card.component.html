@@ -1,0 +1,22 @@
+<div *ngFor="let itemss of idioms" class="card">
+    <h5 class="ion-text-left">
+        {{ itemss.de }}
+    </h5>
+    <div *ngFor="let items of itemss.definitions">
+        <p class="ion-text-left">
+            {{ items.de }}
+        </p>
+        <p>
+            {{ items.fa }}
+        </p>
+        <div *ngFor="let item of items.examples">
+            <ion-label>مثال ها: </ion-label>
+            <p class="ion-text-left">
+                {{ item.de }}
+            </p>
+            <p>
+                {{ item.fa }}
+            </p>
+        </div>
+    </div>
+</div>

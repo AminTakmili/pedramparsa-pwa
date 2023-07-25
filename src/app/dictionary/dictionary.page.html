@@ -1,0 +1,78 @@
+<ion-header class="ion-no-border">
+
+    <ion-toolbar>
+        <!-- <ion-buttons   slot="start">
+        <ion-button  >
+            <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+        </ion-button>
+    </ion-buttons> -->
+        <ion-title>دیکشنری</ion-title>
+    </ion-toolbar>
+
+
+
+</ion-header>
+<ion-content>
+    <div class="search">
+        <section class="serch-input">
+            <ion-searchbar [(ngModel)]="inputVal" (ionChange)="getval($event)" (ionFocus)="searchbarIsFocus()" placeholder="برای جستجو سه حرف بنویسید" [debounce]="1000" showCancelButton="focus"></ion-searchbar>
+            <ion-progress-bar *ngIf="suggestionListLoading" [mode]="'ios'" type="indeterminate"></ion-progress-bar>
+
+        </section>
+        <section class="res">
+            <ion-list *ngIf="inputVal&&suggestionList&&suggestionList.length!=0">
+                <!-- trackBy: trackByFn -->
+
+                <ion-item *ngFor="let item of suggestionList; index as i; " mous (click)="suggestionListClickHandeler(item)">
+                    <!-- <div class="suggestionItem">
+
+         <span>
+         {{item['translation']}}
+        </span> 
+        <span>
+         {{item['title']}}
+        </span> 
+       </div> -->
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="title" size="12">
+                                {{item['title']}}<span *ngIf="item['type']" class="type"> ({{ item['type']}})</span>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="translation" size="12">
+                                {{item['translation']}}
+                            </ion-col>
+
+                        </ion-row>
+                        <!-- <ion-row >
+          <span class="type"> ({{ item['type']}})</span>
+        
+        </ion-row> -->
+                    </ion-grid>
+                </ion-item>
+            </ion-list>
+
+        </section>
+    </div>
+    <ion-segment (ionChange)="segmentChanged($event)" value="words">
+        <ion-segment-button value="words">
+            <ion-label>کلمات</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Idioms">
+            <ion-label>اصطلاحات</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <p *ngIf="notFond">{{notFondText}}</p>
+    <div *ngIf="!inputVal||!suggestionList||suggestionList.length==0">
+        <p *ngIf="!wordObject && !notFond">
+            شما هنوز کلمه ای را جستجو نکرده اید
+        </p>
+    </div>
+
+    <app-word-card *ngIf="wordObject && segmentValue === 'words'" [wordArray]="wordObject[0]"></app-word-card>
+
+    <app-idiom-card *ngIf="wordObject && segmentValue === 'Idioms'" [wordArray]="wordObject[0]"></app-idiom-card>
+
+</ion-content>

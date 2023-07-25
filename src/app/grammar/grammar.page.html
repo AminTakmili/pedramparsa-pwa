@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  
+  <!-- <ion-toolbar >
+    <ion-title>گرامرها</ion-title>
+  </ion-toolbar>
+
+   -->
+  <ion-toolbar color="grammar-background">
+    <ion-buttons   slot="start">
+      <!-- <ion-button  >
+          <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+      </ion-button> -->
+  
+      <ion-back-button
+      [defaultHref]="'home'"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>گرامرها</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+
+<ion-content>
+    <!-- <div *ngFor="let i of [1,2.3,4,5]" class="slider">
+
+      <span>لورم ایپسوم </span>
+      <app-primaryslider></app-primaryslider>
+    </div> -->
+  <section  *ngIf="!loading" class="all-sliders">
+    
+    <div *ngFor="let i of data" class="slider">
+
+      <span>{{i.title}}</span>
+      <app-primaryslider  [loading]="loading" [children]="i.children"></app-primaryslider>
+    </div>
+      
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="لطفا صبر کنید...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  </section>
+  <section *ngIf="loading" class="all-sliders">
+    
+    <div       *ngFor="let domy of ' '.repeat(4).split('')" class="slider">
+
+      <!-- <span>{{domy}}</span> -->
+      <ion-skeleton-text animated class="titel-loding"></ion-skeleton-text>
+
+      <app-primaryslider [loading]="loading" [children]="[]"></app-primaryslider>
+    </div>
+    
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="لطفا صبر کنید...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  </section>
+
+</ion-content>

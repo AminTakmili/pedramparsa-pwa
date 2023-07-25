@@ -1,0 +1,15 @@
+@import '../../../theme/extend';
+ion-content{
+    // margin-top: 2rem !important;
+    ion-title{
+        margin-top: 2rem;
+    }
+    
+    ion-item {
+    // font-size: 1.6rem;
+    // width: 90%;
+    @extend %box-shadow-1;
+    border-radius: 15px;
+    margin: 2rem 1rem;
+}
+}

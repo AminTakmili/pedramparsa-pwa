@@ -1,0 +1,196 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title slot="start">لایتنر</ion-title>
+    <ion-buttons slot="end">
+      <ion-button >
+        <ion-icon *ngIf="true" name="volume-high-outline"></ion-icon>      
+        <ion-icon *ngIf="false" name="volume-mute-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openLeitnerSetingModal()" id="setting" >
+        <ion-icon name="settings-outline"></ion-icon>
+      
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item class="item-box-logo" lines="none">
+    
+      <div class="leitner-boxes" >
+
+        <div (click)="openLeitnerStepsReportModal(box.step)" *ngFor=" let box of boxList" class="box-leitner">
+          <ion-badge  [ngClass]="{'active': box.active}" class="active" [mode]="'ios'" slot="start">{{box.wordCount}}</ion-badge>
+          <svg id="order" xmlns="http://www.w3.org/2000/svg" width="34.322" height="38.208" viewBox="0 0 34.322 38.208">
+            <path id="Path_6671" data-name="Path 6671" d="M7.355.211A7.692,7.692,0,1,1-.337,7.9,7.692,7.692,0,0,1,7.355.211Z" transform="translate(19.171 22.612)" fill="#8bbc00"/>
+            <g id="Group_7169" data-name="Group 7169" transform="translate(2.59 21.37)">
+              <g id="Group_7168" data-name="Group 7168">
+                <path id="Path_6667" data-name="Path 6667" d="M56.652,264a.648.648,0,0,0-.648.648v2.59a.648.648,0,1,0,1.3,0v-2.59A.648.648,0,0,0,56.652,264Z" transform="translate(-56.004 -264.002)" fill="#72ab00"/>
+              </g>
+            </g>
+            <g id="Group_7171" data-name="Group 7171" transform="translate(5.18 22.665)">
+              <g id="Group_7170" data-name="Group 7170">
+                <path id="Path_6668" data-name="Path 6668" d="M88.652,280a.648.648,0,0,0-.648.648v2.59a.648.648,0,1,0,1.3,0v-2.59A.648.648,0,0,0,88.652,280Z" transform="translate(-88.004 -280.002)" fill="#72ab00"/>
+              </g>
+            </g>
+            <g id="Group_7175" data-name="Group 7175" transform="translate(0 0)">
+              <g id="Group_7174" data-name="Group 7174">
+                <path id="Path_6670" data-name="Path 6670" d="M58.02,28.285a7.767,7.767,0,0,0-4.228-4.908V9.066a.648.648,0,0,0-.318-.558L39.227.09a.648.648,0,0,0-.659,0L24.322,8.509c-.014.008-.023.019-.036.028s-.025.019-.038.03a.638.638,0,0,0-.143.158s-.008.007-.01.012v0a.648.648,0,0,0-.073.212.573.573,0,0,1-.008.057A.566.566,0,0,0,24,9.066V25.9a.648.648,0,0,0,.318.558l14.246,8.418a.531.531,0,0,0,.052.022.511.511,0,0,0,.054.023.578.578,0,0,0,.446,0,.523.523,0,0,0,.055-.023c.017-.008.035-.012.052-.022l3.867-2.285A7.767,7.767,0,0,0,58.02,28.285ZM38.9,1.4l3.367,1.99L37.272,6.34a.648.648,0,1,0,.659,1.116l5.607-3.311,3.367,1.99L33.933,13.8l-3.367-1.99L35.99,8.6a.648.648,0,1,0-.659-1.116l-6.038,3.569-3.368-1.99ZM33.285,14.921v4.324L29.94,17.268V12.944Zm9.754,13.513a7.89,7.89,0,0,0-.213,2.813l-3.281,1.939v-2.1a.648.648,0,0,0-1.3,0v2.1L25.3,25.534V10.2l3.346,1.977v5.458a.648.648,0,0,0,.318.558l4.64,2.742a.648.648,0,0,0,.977-.558V15.686l3.67,2.169V28.493a.648.648,0,0,0,1.3,0V17.854l11.736-6.935A.648.648,0,1,0,50.623,9.8L38.9,16.733l-3.691-2.182L48.18,6.885,52.5,9.435V22.924A7.74,7.74,0,0,0,43.039,28.434Zm7.515,8.477a6.476,6.476,0,1,1,6.476-6.476A6.476,6.476,0,0,1,50.554,36.911Z" transform="translate(-24.004 0)" fill="#72ab00"/>
+              </g>
+            </g>
+            <text  transform="translate(26.697 34.773)" fill="#fff" font-size="12" font-family="SegoeUI, Segoe UI">
+              <tspan x="3.234" y="0">
+             {{ (box.step)}}
+            </tspan></text>
+          </svg>
+        </div>
+
+      </div>
+
+    </ion-item>
+    <ion-item class="main-item" lines="none">
+     
+		<section class="cardvocab-slider">
+			<swiper #cardSlider [effect]="'flip'" [grabCursor]="true" [navigation]="true" class="mySwiper" dir="rtl">
+				<ng-template swiperSlide>
+					<div class="main-content">
+						<div class="header-card">
+							<ion-card color={{colorCard}}>
+
+								<!-- <span>{{pronunciation}}</span> -->
+								<ion-card-title>{{frontVocab}}</ion-card-title>
+
+								<ion-card-subtitle>
+									{{role}}
+								</ion-card-subtitle>
+
+							</ion-card>
+
+							<div  class="icons">
+								<div  class="add">
+									<!-- <ion-button class="icon-button" fill="" shape="round"> -->
+									<div (click)="addMyWord()" class="back-icon">
+
+										<ion-icon  [ngClass]="{'in-my-word':inMyWord }" name="star"></ion-icon>
+									</div>
+									<!-- </ion-button> -->
+									<!-- <div (click)="addLitner()" *ngIf="this.isReverse==0" class="back-icon">
+
+										<ion-icon [ngClass]="{'in-leitner':isLeitner }"  size="small" name="bulb-sharp"></ion-icon>
+									</div> -->
+								</div>
+
+								<div  class="sound">
+									<div class="back-icon">
+
+										<ion-icon size="small" name="volume-high"></ion-icon>
+									</div>
+                  <!-- <div  (click)="addLitner()" *ngIf="this.isReverse==1" class="back-icon">
+
+										<ion-icon size="small" name="bulb-sharp"></ion-icon>
+									</div> -->
+								</div>
+
+
+							</div>
+						</div>
+						<div class="type">
+
+							<ion-card color={{colorCard}}>
+
+								<ion-card-title> {{role}} </ion-card-title>
+
+							</ion-card>
+
+						</div>
+
+					</div>
+
+
+
+				</ng-template>
+
+
+				<ng-template swiperSlide>
+
+					<div class="back-card-slider">
+
+						<div class="backcard-type">
+
+							<ion-card color={{colorCard}}>
+              				  <span *ngIf="pronunciation">{{pronunciation}}</span> 
+								<ion-card-title> {{frontVocab}} </ion-card-title>
+							</ion-card>
+
+						</div>
+						<div class="main-content">
+							<div class="header-card">
+								<ion-card color={{colorCard}}>
+
+									<span *ngIf="pronunciation">{{pronunciation}}</span>
+									<ion-card-title>{{backVocab}}</ion-card-title>
+
+									<ion-card-subtitle>
+										{{role}}
+                    
+									</ion-card-subtitle>
+
+								</ion-card>
+
+								<div *ngIf="false" class="icons">
+									<div class="add">
+										<!-- <ion-button class="icon-button" fill="" shape="round"> -->
+										<div class="back-icon">
+
+											<ion-icon name="star"></ion-icon>
+										</div>
+										<!-- </ion-button> (click)="addLitner()"-->
+										<div   class="back-icon">
+
+											<ion-icon size="small" name="bulb-sharp"></ion-icon>
+										</div>
+									</div>
+
+									<div class="sound">
+										<div class="back-icon">
+
+											<ion-icon size="small" name="volume-high"></ion-icon>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+
+
+						</div>
+
+						<div class="backcard-button">
+
+							<ion-button (click)="submitWord(1)" color="success" shape="round">
+								بلدم
+							</ion-button>
+
+							<ion-button  (click)="submitWord(0)" color="danger" shape="round">
+								بلد نیستم
+							</ion-button>
+
+						</div>
+					</div>
+
+				</ng-template>
+
+
+			</swiper>
+
+		</section>
+
+  
+    </ion-item>
+    
+  </ion-list>
+  
+
+</ion-content>

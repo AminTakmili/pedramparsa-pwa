@@ -1,0 +1,27 @@
+
+<ion-content>
+
+ 
+
+  <swiper dir="rtl" (slidePrevTransitionEnd)="isEnd=false" (reachEnd)="isEnd=true"  #intro [pagination]="true" class="mySwiper">
+    <ng-template swiperSlide *ngFor="let item of startSliderList">
+      <section class="content">
+
+        <ion-img alt="image of welcom slider" [src]="item.imgSrc"></ion-img>
+
+
+        <ion-text color="secondary">
+          <p>{{item.text}}</p>
+        </ion-text>
+
+        <div class="button">
+
+          <ion-button ngClass="btn" (click)="slideNext()" shape="round"> بعدی</ion-button>
+        </div>
+      </section>
+
+    </ng-template>
+  </swiper>
+
+</ion-content>
+

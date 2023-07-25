@@ -1,0 +1,80 @@
+
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar color="exams-background">
+    <ion-buttons   slot="start">
+        <ion-button  [routerLink]="['/home']" >
+            <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>خانه</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+
+<ion-content>
+
+  <div *ngFor="let i of data"  class="type-exam">
+
+    <ion-title>{{i['title']}}</ion-title>
+  
+  <swiper dir="rtl"[spaceBetween]="30" [slidesPerView]="'auto'" class="mySwiper">
+    <ng-template *ngFor="let child of i['children']"  swiperSlide>
+    
+      <!-- [routerLink]="['/grammer/book/'+child.id]" -->
+      <ion-card [routerLink]="[child['child_id']]" >
+        <ion-card-header>
+          <!-- <ion-img [src]="'src/assets/img/no-image-icon-23485.png'"></ion-img> -->
+          <ion-img *ngIf="child.image.phth" (ionError)="imgError()" [alt]="child['child_title']" [src]="imgSrc||child.image.path" ></ion-img>
+          <ion-img *ngIf="!child.image.path" (ionError)="imgError()" [alt]="child['child_title']" [src]="'../../assets/img/no-image-icon-23485.png'" ></ion-img>
+  
+        </ion-card-header>
+        
+        <ion-card-title>{{child['child_title']}}</ion-card-title>
+        <!-- <ion-card-content>
+          
+        </ion-card-content> -->
+      </ion-card>
+
+
+      
+    </ng-template>
+  </swiper>
+ </div>
+ <div *ngIf="loading" class="ion-padding custom-skeleton type-exam loading">
+   
+   <!-- <div  *ngFor="let domy of ' '.repeat(2).split('')" >
+    <ion-skeleton-text animated class="titel-loding"></ion-skeleton-text>
+
+    <div  *ngFor="let domy of ' '.repeat(2).split('')" class="loding-card">
+      <ion-skeleton-text animated class=" loading-card-body"></ion-skeleton-text>
+      <ion-skeleton-text animated class=" loading-card-img"></ion-skeleton-text>
+    </div>
+   
+  </div> -->
+  <ion-grid>
+    <div *ngFor="let domy of ' '.repeat(3).split('')" class="loading-cards">
+      <ion-skeleton-text animated class="titel-loding"></ion-skeleton-text>
+    <ion-row >
+      <ion-col  size="3"   *ngFor="let domy of ' '.repeat(2).split('')" >
+        <div class="loding-card">
+
+          <ion-skeleton-text animated class=" loading-card-body"></ion-skeleton-text>
+          <ion-skeleton-text animated class=" loading-card-img"></ion-skeleton-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+   </ion-grid>
+</div>
+ <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="لطفا صبر کنید...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+
+
+</ion-content>

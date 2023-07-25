@@ -1,0 +1,43 @@
+ion-content{
+    .report{
+        .several-day-text{
+            font-weight: 1.5rem;
+            .day-num{
+                color: #00cbae;
+            }
+        }
+        .report-num{
+            color: #00cbae;
+        }
+    }
+    .seting{
+        margin-top: 90px;
+        ion-item{
+
+            width: 100%;
+            ion-select{
+                width: 101%;
+            }
+        }
+    }
+    .seting::after{
+        content: "";
+        width: 100%;
+        height: 36%;
+        position: absolute;
+        top: 400px;
+        right: 0;
+        background: #E3E1E1;
+
+    }
+    .seting::before{
+        content: "";
+        width: 100%;
+        height: 90px;
+        position: absolute;
+        top: 210px;
+        right: 0;
+        background: #E3E1E1;
+
+    }
+}

@@ -1,0 +1,52 @@
+<!-- <ion-title>گرامر کتاب منشن</ion-title> -->
+<!-- <ion-list  >  -->
+   <!-- *ngFor="let i of data" lines="none" color="light"  -->
+  <ion-item button *ngIf="data" [routerLink]="[id]" >
+    <ion-buttons   slot="end">
+        <ion-button  >
+          <ion-icon [color]="type+'-background'" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <!-- <ion-label>
+      Item
+    </ion-label>
+    
+    <ion-title>گرامرها</ion-title> -->
+    
+    <ion-label  class="ion-text-wrap">
+      <ion-text>
+        <h3>{{title}}</h3>
+      </ion-text>
+      <ion-text *ngIf="false"  [color]="type+'-background'">
+        <p>{{bookTitle}} </p>
+      </ion-text>
+      <ion-text *ngIf="type=='videos'"  [color]="type+'-background'">
+        <p>{{children.length}} ویدیو </p>
+      </ion-text>
+    </ion-label>
+
+  </ion-item>
+  
+  <ion-card class="no-data"  *ngIf="!(data||data==[])&&!loading">
+    <ion-card-header>
+      <ion-img [src]="'/assets/img/data-not-found-1965034-1662569.webp'"></ion-img>
+      <ion-card-title>
+        متاسفانه مطلبی وجود ندارد
+      </ion-card-title>
+      <!-- <ion-card-subtitle></ion-card-subtitle> -->
+    </ion-card-header>
+  
+  </ion-card>
+ 
+  <div *ngIf="loading&&!(data||data==[]||data==[]||data=={})" class="ion-padding custom-skeleton type-exam loading">
+  
+    <div  *ngFor="let domy of ' '.repeat(10).split('')"  class="loding-card">
+      <ion-skeleton-text animated class=" loading-card-body"></ion-skeleton-text>
+      <ion-skeleton-text animated class="titel-loding"></ion-skeleton-text>
+    </div>
+   </div>
+   
+ 
+   
+<!-- </ion-list> -->
+

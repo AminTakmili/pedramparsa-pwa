@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="textbooks-background">
+    <ion-buttons   slot="start">
+      <!-- <ion-button  >
+          <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+      </ion-button> -->
+  
+      <ion-back-button
+      [defaultHref]="'home/grammar/'+backId+'/'+id"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{lessonTitle}}</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+
+<ion-content color="textbooks-background">
+  <div class="text-box">
+    <ion-title class="ion-text-center">{{title}}</ion-title>
+<!-- color="secondary" -->
+    <div class="main-text" >
+      
+      <ion-text color="dark" [innerHtml]="textHtml" >
+    
+      </ion-text>
+      
+
+    </div>
+
+  </div>
+ 
+</ion-content>

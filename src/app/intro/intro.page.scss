@@ -1,0 +1,41 @@
+swiper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column !important;
+    height: 97vh;
+    padding: 20px 0 50px 0;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    p{
+      flex: 0 0 30%;
+      margin: 0;
+      // padding:50px 20px 30px 20px;
+      padding: 30px;
+    }
+    ion-img{
+      flex: 0 0 40%;
+      // min-height: 200px;
+      height: 50%;
+      max-height: 300px;
+      width: 300px;
+      object-fit: contain;
+   
+  
+    }
+    
+   .button{
+      flex:0 0 15%;
+      padding: 0;
+      margin: 0;
+     
+      
+    }
+  }
+  

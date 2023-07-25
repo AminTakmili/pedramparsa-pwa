@@ -1,0 +1,57 @@
+
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar>
+    <ion-buttons   slot="start">
+      <!-- <ion-button  >
+          <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+      </ion-button> -->
+  
+      <ion-back-button
+      [defaultHref]="'home'"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>خرید ها</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+<ion-content>
+ 
+    <ion-card *ngFor="let item of data" button>
+      <ion-card-header>
+      
+        <ion-card-title>{{item['title']}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-text [innerHTML]="item['description']">
+         
+        </ion-text>
+     
+      <ion-buttons expand="full"slot="start">
+        <ion-button *ngIf="item['is_paid']==0" class="dont-buy"   shape="round" >
+          <ion-icon slot="start" name="cart-outline"></ion-icon>
+          <span class="text-shoping"> خرید پکیج   </span>
+                    <span class="text-price">{{item['price']}} تومان</span>    
+          </ion-button>
+        <ion-button disabled *ngIf="item['is_paid']!=0" class="buy"   shape="round" >
+          <ion-icon  slot="start" color="success" name="checkmark-circle"></ion-icon>
+          <span>
+
+            خریداری شده در {{item['paid_at']}}   
+          </span>
+          </ion-button>
+      </ion-buttons>
+   
+     </ion-card-content>
+    </ion-card>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="لطفا صبر کنید...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  
+</ion-content>

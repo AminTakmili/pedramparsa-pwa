@@ -1,0 +1,35 @@
+<!-- <ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app> -->
+
+
+<div class="bigScreen" *ngIf="isDesktop">
+  <div class="marvel-device iphone-x">
+    <div class="header">
+      <div class="notch">
+        <div class="camera"></div>
+        <div class="speaker"></div>
+      </div>
+    </div>
+    <div class="top-bar"></div>
+    <div class="sleep"></div>
+    <div class="bottom-bar"></div>
+    <div class="volume"></div>
+    <div class="overflow">
+      <div class="shadow shadow--tr"></div>
+      <div class="shadow shadow--tl"></div>
+      <div class="shadow shadow--br"></div>
+      <div class="shadow shadow--bl"></div>
+    </div>
+    <div class="inner-shadow"></div>
+    <div class="screen">
+      <ion-app>
+        <ion-router-outlet></ion-router-outlet>
+      </ion-app>
+    </div>
+  </div>
+</div>
+<ion-app *ngIf="!isDesktop">
+  
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

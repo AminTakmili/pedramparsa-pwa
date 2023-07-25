@@ -1,0 +1,112 @@
+@import '../.././../theme/extend';
+
+ion-content{
+    ion-searchbar{
+        --box-shadow:none;
+    }
+    ion-col{
+        // margin: 0 .5rem;
+        cursor: pointer;
+        // margin: 0 auto;
+
+        ion-card{
+
+            border-radius: 15px;
+            background-color: var(--ion-color-light);
+            @extend %box-shadow-1;
+            // width: 37vw;
+            // width: 14rem;
+            // height: 18.1rem;
+            width: 17rem;
+            height: 14.1rem;
+            margin: 0 auto;
+            height: auto;
+            text-align: center;
+        
+        //     $width:37vw;
+        //   width: $width;
+        //   height: ($width * 1.33);
+        ion-card-header{
+            padding: 0;
+            //    max-width: 50%;
+                max-height: 90px;
+                // background: url('../../../assets/img/novidio.jpg');
+                padding: 0;
+                height:65%;
+                width: 100%;
+                // background-repeat: no-repeat;
+                // background-size: cover;
+                // background-position: center;
+                margin-top: 1rem;
+              
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                ion-img{
+                    padding: 0;
+                    height:100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                  filter: blur(0.5px);
+                    position: relative;
+                }
+                
+                ion-icon {
+                    // background-image: radial-gradient(circle at 100%, #FFFFFF, rgba(225, 225, 225,50%) 100%);
+                    color:rgba(225, 225, 225,70%) ;
+                    background-image:radial-gradient( circle at 49%, #FFFFFF 50%, rgba(225, 225, 225,70%) 57%);;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    padding: 14px;
+                    position: absolute;
+                   
+                }
+        }
+        ion-card-title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: .7rem;
+            width: 100%;
+            background-color: var(--ion-color-light);
+            //  border-radius: 15px 15px 0 0;
+            span{
+                font-size: 1.3rem;
+                margin: .5rem;
+            }
+            .titel{
+                text-align: start;
+                flex-grow: 1;
+                padding: .5rem;
+            }
+            .vidio-time{
+              
+                text-align: end;
+                flex-grow: 1;
+                padding: .5rem;
+            }
+
+        }
+        }
+
+    }
+    ion-col:nth-child(even) {
+       margin-right: 4rem;
+      }
+    ion-col:nth-child(odd) {
+   margin-right: -1.3%;
+      }
+      ion-col:active {
+        ion-icon {
+            // background-image: radial-gradient(circle at 100%, #FFFFFF, rgba(225, 225, 225,50%) 100%);
+            color:rgba(250, 249, 249, 0.7) ;
+            background-image:radial-gradient( circle at 49%, #FFFFFF 53%, rgba(225, 225, 225,80%) 57%) !important;
+           
+           
+        }
+      
+      }
+}

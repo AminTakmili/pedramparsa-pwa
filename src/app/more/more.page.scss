@@ -1,0 +1,106 @@
+ion-content{
+    ion-icon{
+        height: 24px;
+        width: 24px;
+        margin: 12px  0 12px 32px ;
+    }
+
+    // ion-accordion {
+    //     ion-icon{
+    //         color: var(--detail-icon-color);
+    //         font-size: var(--detail-icon-font-size);
+    //         opacity: var(--detail-icon-opacity);
+        
+    //     }
+    // }
+
+    form{
+        margin-top: 15px;
+        ion-item{
+            margin: 15px 0;
+
+            .form-input {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                width: 100%;
+            
+                margin: .1rem 0;
+           ion-label {
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    display: block;
+                    // width: 100%;
+                    background-color: #fbfbfb;
+                    z-index: 30;
+                    width: 74px;
+                    margin-inline-start: 10px;
+                }
+            
+                ion-input,
+                ng-select,
+                ion-textarea,
+                input,
+                ckeditor
+                 {
+                    width: 100%;
+                    height: 45px;
+                    border-radius: 4px;
+                    border: 1.5px solid var(--ion-color-primary);
+                    background-color: var(--ion-color-step-0);
+                    flex: 0 0 100%;
+                    margin-bottom: .5rem;
+                    --padding-start: 10px !important;
+            outline: none;
+                }
+               
+            
+                ckeditor ,ion-textarea {
+                    height: initial;
+                }
+                .ck-editor__editable_inline {
+                    height: auto !important;
+                    min-height: 300px !important;
+                    width: 100%;
+                }
+            
+                .ng-select.ng-select-single .ng-select-container {
+                    height: 43px;
+                    border: none;
+                }
+            
+                .error {
+                    flex: 1 1 auto;
+                    max-width: 100%;
+                    display: block;
+                    width: 100%;
+                }
+            
+                .hint {
+                    flex: 0 0 auto;
+                    display: block;
+                    max-width: 100%;
+                    font-size: 12px;
+                    font-weight: 200;
+                    text-align: right;
+                    color: var(--ion-color-step-700);
+                }
+            
+                [dir="rtl"] .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+                    height: 50px;
+                }
+            }
+
+            ion-button{
+                margin: 20px auto;
+                padding: 0px;
+                height: 30px;
+                width: 110px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,871 @@
+<ion-header class="ion-no-border">
+
+    <ion-toolbar color="secondary">
+        <ion-buttons slot="start">
+            <!-- <ion-button  >
+          <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+      </ion-button> -->
+            <ion-back-button [defaultHref]="'/dictionary'" [text]="" [icon]="'arrow-back-outline'">
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ title }}</ion-title>
+
+    </ion-toolbar>
+
+
+</ion-header>
+
+
+<ion-content>
+    <!-- <ion-title>Title</ion-title> -->
+    <ion-grid>
+        <ion-row>
+            <h2>Übersicht</h2>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Präsens</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_ich }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_du }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_ese }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_wir }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_ihr }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_sie }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Präteritum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_ich }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_du }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_ese }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_wir }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_ihr }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_sie }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Imprativ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Singular</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ imprativSingular_1 }}</b>
+                                    <br />
+                                    <b class="ng-star-inserted">{{ imprativSingular_2 }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Plural</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ imprativPlural }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <h2>Indikativ</h2>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Präsens</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_ich }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_du }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_ese }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_wir }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_ihr }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentI_sie }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Präteritum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_ich }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_du }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_ese }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_wir }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_ihr }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastI_sie }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Perfekt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td [innerText]="perfectI_value ? 'habe' : 'bin'"></td>
+                                <td rowspan="6" *ngIf="perfectI_value">
+                                    <b class="ng-star-inserted">{{ perfectI_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td [innerText]="perfectI_value ? 'hast' : 'bist'"></td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td [innerText]="perfectI_value ? 'hat' : 'ist'"></td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td [innerText]="perfectI_value ? 'haben' : 'sind'"></td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td [innerText]="perfectI_value ? 'habt' : 'seid'"></td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td [innerText]="perfectI_value ? 'haben' : 'sind'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Plusquamperfekt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td [innerText]="perfectI_value ? 'hatte' : 'war'"></td>
+                                <td rowspan="6" *ngIf="plusperfectI_value">
+                                    <b class="ng-star-inserted">{{ plusperfectI_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td [innerText]="perfectI_value ? 'hattest' : 'warst'"></td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td [innerText]="perfectI_value ? 'hatte' : 'war'"></td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td [innerText]="perfectI_value ? 'hatten' : 'waren'"></td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td [innerText]="perfectI_value ? 'hattet' : 'wart'"></td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td [innerText]="perfectI_value ? 'hatten' : 'waren'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Futur I</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>warde</td>
+                                <td rowspan="6" *ngIf="future1I_value">
+                                    <b class="ng-star-inserted">{{ future1I_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>wirst</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>wird</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>werden</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>werdet</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>werden</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Futur II</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>warde</td>
+                                <td rowspan="6" *ngIf="future2I_value">
+                                    <b class="ng-star-inserted">{{ future2I_value_corrected ?? future2I_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>wirst</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>wird</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>werden</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>werdet</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>werden</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <h2>Konjunktiv I</h2>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Präsens</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentK_ich }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentK_du }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentK_ese }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentK_wir }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentK_ihr }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ presentK_sie }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Perfekt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td [innerText]="perfectK_value ? 'habe' : 'sei'"></td>
+                                <td rowspan="6" *ngIf="perfectK_value">
+                                    <b class="ng-star-inserted">{{ perfectK_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td *ngIf="!perfectK_value">
+                                    seist
+                                    <br /> seiest
+                                </td>
+                                <td *ngIf="perfectK_value">
+                                    habest
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td [innerText]="perfectK_value ? 'habe' : 'sei'"></td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td [innerText]="perfectK_value ? 'haben' : 'seien'"></td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td [innerText]="perfectK_value ? 'habet' : 'seiet'"></td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td [innerText]="perfectK_value ? 'haben' : 'seien'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Futur I</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>werde</td>
+                                <td rowspan="6" *ngIf="future1K_value">
+                                    <b class="ng-star-inserted">{{ future1K_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>werdest</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>werde</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>werden</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>werdet</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>werden</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Futur II</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>warde</td>
+                                <td rowspan="6" *ngIf="future2K_value">
+                                    <b class="ng-star-inserted">{{ future2K_value_corrected ?? future2K_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>wirst</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>wird</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>werden</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>werdet</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>werden</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <h2>Konjunktiv II</h2>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Präteritum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastK_ich }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastK_du }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastK_ese }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastK_wir }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastK_ihr }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ pastK_sie }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Plusquamperfekt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td [innerText]="perfectK_value ? 'hätte' : 'wäre'"></td>
+                                <td rowspan="6" *ngIf="plusperfectK_value">
+                                    <b class="ng-star-inserted">{{ plusperfectK_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td [innerText]="perfectK_value ? 'hättest' : 'wärest'"></td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td [innerText]="perfectK_value ? 'hätte' : 'wäre'"></td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td [innerText]="perfectK_value ? 'hätten' : 'wären'"></td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td [innerText]="perfectK_value ? 'hättet' : 'wäret'"></td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td [innerText]="perfectK_value ? 'hätten' : 'wären'"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Futur I</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>würde</td>
+                                <td rowspan="6" *ngIf="future1K2_value">
+                                    <b class="ng-star-inserted">{{ future1K2_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>würdest</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>würde</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>würden</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>würdet</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>würden</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Futur II</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>würde</td>
+                                <td rowspan="6" *ngIf="future2K2_value">
+                                    <b class="ng-star-inserted">{{ future2K2_value_corrected ?? future2K2_value }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>würdest</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>würde</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>würden</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>würdet</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>würden</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <h2>Imperativ</h2>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="4" class="ion-text-center">Imprativ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Singular</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ imprativSingular_1 }}</b>
+                                    <br />
+                                    <b class="ng-star-inserted">{{ imprativSingular_2 }}</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Plural</td>
+                                <td>
+                                    <b class="ng-star-inserted">{{ imprativPlural }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <h2>Infinitiv</h2>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="ion-text-center">Infinitiv Perfekt</th>
+                            </tr>
+                            <tr>
+                                <th colspan="1" class="ion-text-center">Partizip</th>
+                                <th colspan="1" class="ion-text-center">Hilfsverb</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ion-text-center" *ngIf="perfectInfinitiv_perfekt">
+                                    <b class="ng-star-inserted">{{ perfectInfinitiv_perfekt }}</b>
+                                </td>
+                                <td class="ion-text-center" *ngIf="perfectInfinitiv_perfekt_help">
+                                    <b class="ng-star-inserted">{{ perfectInfinitiv_perfekt_help }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="ion-text-center">Infinitiv Futur I</th>
+                            </tr>
+                            <tr>
+                                <th colspan="1" class="ion-text-center">Infinitiv</th>
+                                <th colspan="1" class="ion-text-center">Hilfsverb</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ion-text-center" *ngIf="future1Infinitiv_futur">
+                                    <b class="ng-star-inserted">{{ future1Infinitiv_futur }}</b>
+                                </td>
+                                <td class="ion-text-center" *ngIf="future1Infinitiv_futur_help">
+                                    <b class="ng-star-inserted">{{ future1Infinitiv_futur_help }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+            <ion-col size="12">
+                <div class="table-wrapper">
+                    <table class="table kon">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="ion-text-center">Infinitiv Futur II</th>
+                            </tr>
+                            <tr>
+                                <th colspan="1" class="ion-text-center">Infinitiv</th>
+                                <th colspan="1" class="ion-text-center">Hilfsverb</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ion-text-center" *ngIf="future2Infinitiv_futur">
+                                    <b class="ng-star-inserted">{{ future2Infinitiv_futur_corrected ?? future2Infinitiv_futur }}</b>
+                                </td>
+                                <td class="ion-text-center" *ngIf="future2Infinitiv_futur_help">
+                                    <b class="ng-star-inserted">{{ future2Infinitiv_futur_help }}</b>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

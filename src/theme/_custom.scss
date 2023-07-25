@@ -1,0 +1,230 @@
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    transition: .3s;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-size: 1.6rem;
+}
+
+.swiper .swiper-pagination-bullet {
+    background-color: var(--ion-color-medium);
+    opacity: 1;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: var( --ion-color-primary);
+}
+
+.btn {
+    width: 13.273rem !important;
+    height: 3.5rem !important;
+    text-align: center;
+    min-height: 35px;
+    margin-bottom: 15px;
+}
+
+.line_input {
+    width: 60%;
+    max-height: 50px;
+    direction: ltr;
+    border-bottom: solid 1px var(--ion-color-medium);
+    margin: 10px 0;
+}
+
+ion-header {
+    background-color: transparent;
+    box-shadow: unset;
+    // padding: 1rem;
+    // align-items: start;
+}
+
+// .amin{
+// .swiper {
+//     width: 300px;
+//     height: 300px;
+//     padding: 0 50px;
+//   }
+//   .swiper-slide {
+//     background-position: center;
+//     background-size: cover;
+//     width: 300px;
+//     height: 300px;
+//   }
+//   .swiper-slide img {
+//     display: block;
+//     width: 100%;
+//   }
+// }
+.cardvocab-slider {
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled {
+        opacity: 0;
+        cursor: auto;
+        pointer-events: none;
+        display: none;
+    }
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        left: 15px;
+        // top:39%;
+        top: 45%;
+        right: auto;
+        background-color: #fbfbfb;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        color: var(--ion-color-medium);
+    }
+    .swiper-button-prev {
+        right: 15px;
+    }
+}
+
+.type-exam {
+    // swiper-slide 
+    .swiper-slide {
+        margin-left: 3px !important;
+        width: auto !important;
+        border-radius: 15px;
+    }
+}
+
+.type-exam {
+    .swiper-slide {
+        width: auto !important;
+        border-radius: 15px;
+    }
+}
+
+.more-accordion {
+    .ion-accordion-toggle-icon {
+        color: var(--detail-icon-color);
+        font-size: var(--detail-icon-font-size);
+        opacity: var(--detail-icon-opacity);
+    }
+}
+
+.bigScreen {
+    ion-header ion-toolbar:first-of-type {
+        padding-top: 25px;
+    }
+    header ion-toolbar:first-of-type {
+        padding-top: 25px;
+    }
+    ion-tabs {
+        ion-tab-bar {
+            padding-top: 15px;
+            ion-tab-button {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .add-button {
+        margin-bottom: 15px;
+    }
+    ion-modal {
+        --width: 100%;
+        --min-width: auto;
+        --max-width: auto;
+        --height: 100%;
+        --min-height: auto;
+        --max-height: auto;
+        // ion-header ion-toolbar:first-of-type {
+        // 	// padding-top: 0px;
+        // }
+    }
+    .modal-card {
+        --height: calc(100% - max(30px, var(--ion-safe-area-top)) - 10px);
+    }
+    // app-supports{
+    app-detail {
+        ion-header ion-toolbar:first-of-type {
+            padding-top: 25px;
+            height: 90%;
+        }
+    }
+    // }
+}
+
+::selection {
+    color: var(--ion-color-primary);
+    background: rgb(238, 250, 249);
+}
+
+app-primaryslider {
+    .swiper .swiper-slide {
+        width: auto !important;
+    }
+}
+
+//!  app-reviewvocabulary,
+//   app-my-word{
+//     .swiper{
+//         overflow-y: hidden !important;
+//     }
+//  }
+.table-wrapper {
+    border-radius: 8px;
+    border: 1px solid #f2f2f2;
+    overflow: hidden;
+    margin-bottom: 20px;
+    direction: ltr;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    font-weight: 400;
+    color: #525252;
+    tr:nth-child(odd) {
+        // background-color: #fffbef;
+        background-color: #fe805d0d;
+    }
+    tr:nth-child(2n) {
+        background-color: #fff;
+    }
+    th {
+        font-weight: 600;
+        color: var(--ion-color-secondary);
+        background-color: #fff;
+    }
+    td {
+        vertical-align: middle;
+        line-height: 20px;
+        text-align: start;
+    }
+    b {
+        word-break: break-all;
+        color: #000000;
+        font-weight: 600;
+    }
+    td,
+    th {
+        padding: 8px;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.search {
+    ion-searchbar {
+        input {
+            direction: ltr !important;
+            text-align: left !important;
+        }
+    }
+}

@@ -1,0 +1,133 @@
+<ion-header class="ion-no-border">
+  
+
+  <ion-toolbar >
+
+    <ion-buttons   slot="start">
+      <ion-back-button
+      [defaultHref]="'home/vocabulary/'+backId+'/'+lessonId"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-label *ngIf="lessonTitle"> املا درس {{lessonTitle}} </ion-label>
+    <!-- <ion-back-button
+    [defaultHref]="'home/vocabulary/'+backId"
+    [text]="'واژگان'"
+    [icon]="'arrow-back-outline'">
+</ion-back-button> -->
+    <!-- <ion-title>واژگان </ion-title> -->
+  </ion-toolbar>
+  
+  
+
+</ion-header>
+<ion-content>
+  <ion-backdrop *ngIf="isCheckDictation" tappable="false"></ion-backdrop>
+
+  <div *ngIf="textArray&&textArray.length!=0" class="all-content">
+
+  <section class="statistics">
+    <div class="study">
+
+
+         <circle-progress
+            [percent]="StydyPercent"
+            [maxPercent]="100"
+            [radius]="50"
+            [outerStrokeWidth]="7"
+            [innerStrokeWidth]="0"
+            [outerStrokeColor]="circleProgressHandeler(StydyPercent)"
+            [innerStrokeColor]="'#fffff'"
+            [animation]="true"
+            [animationDuration]="300"
+            [showSubtitle]="true"
+            [subtitle]="'خوانده شده'"
+            [subtitleColor]="'#828282 '"
+            [subtitleFontSize]="'16'"
+            [subtitleFontWeight]="'400'"
+        
+          ></circle-progress>
+    </div>
+    <div class="lerning">
+
+      <!-- [outerStrokeColor]="lerningPercentColor" -->
+         <circle-progress
+[percent]="lerningPercent"
+[maxPercent]="100"
+[radius]="50"
+[outerStrokeWidth]="7"
+[innerStrokeWidth]="0"
+[outerStrokeColor]="circleProgressHandeler(lerningPercent)"
+[innerStrokeColor]="'#fffff'"
+[animation]="true"
+[animationDuration]="300"
+[showSubtitle]="false"
+[showSubtitle]="true"
+[subtitle]="'یاد گرفته'"
+[subtitleColor]="'#828282 '"
+ [subtitleFontSize]="'16'"
+ [subtitleFontWeight]="'400'"
+
+
+
+
+          ></circle-progress>
+    </div>
+
+  </section>
+  <section class="main-content">
+
+    <ion-title class="ion-text-center">{{meaning}}</ion-title>
+    <ion-text [ngClass]="{'wrong':isWrong}" dir="ltr"  class="ion-align-items-center"  color="medium" >
+
+      <!-- *ngFor="let property of wordUserArray | keyvalue "
+      {{property.key}}: {{property.value}} -->
+
+      <span class="word-input-text"  #userWordSpan  *ngFor="let item of wordUserArray; "  [id]="'span##'+item[1]" >
+        {{item[0]}}
+    </span>
+    
+    </ion-text>
+   <div class="main-card">
+      <ion-card  >
+       <div class="buttons" dir="ltr" >
+        <!-- [disabled]=wordArray.disabel[this.wordUserArray.indexOf(item)] -->
+         <ion-button #wordButton    size="small" *ngFor="let item of textArray; index as i" mode="ios" [id]="item[1]" (click)="isertWordButtonHandeler(item,$event,i)" >
+          {{item[0]}}
+         </ion-button>
+       
+       </div>
+        
+      </ion-card>
+    
+      <div class="icons">
+        <div  class="close">
+          <!-- <ion-button class="icon-button" fill="" shape="round"> -->
+           <div (click)="deletWordButtonHandeler()" class="back-icon">
+
+            <ion-icon name="close-sharp"></ion-icon>
+           </div>
+          <!-- </ion-button> -->
+         
+        </div>
+        
+        <div  class="sound" >
+          <div class="back-icon">
+             
+            <ion-icon  size="small" name="volume-high"></ion-icon>
+          </div>
+        </div>
+       
+      
+      </div>
+  </div>
+  <ion-button (click)="checkDictationButtonHandeler()"  expand="block" color="primary" shape="round">
+    بررسی
+  </ion-button>
+
+
+  </section>
+</div>
+
+</ion-content>

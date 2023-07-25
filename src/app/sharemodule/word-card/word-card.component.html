@@ -1,0 +1,206 @@
+<div class="content">
+    <div class="header-card">
+        <ion-card color={{color}}>
+            <ion-card-title>{{vocab}}</ion-card-title>
+
+            <span *ngIf="pronunciation">/{{pronunciation}}/</span>
+
+            <ion-card-subtitle>
+                {{role}}
+            </ion-card-subtitle>
+
+            <ion-card-content>
+                <ion-button *ngIf="role === 'verb'" shape="round" fill="outline" color="light" [routerLink]="'conjugateVerb/'+wordId">
+                    مشاهده صرف فعل
+                </ion-button>
+                <ion-button *ngIf="role === 'Adjektiv'" shape="round" fill="outline" color="light" [routerLink]="'conjugateAdjective/'+wordId">
+                    مشاهده صرف صفت
+                </ion-button>
+            </ion-card-content>
+        </ion-card>
+
+        <div class="icons">
+            <div class="add">
+                <!-- <ion-button class="icon-button" fill="" shape="round"> -->
+                <div (click)="addMyWord()" class="back-icon">
+                    <!-- <ion-spinner name="lines-small"></ion-spinner> -->
+                    <ion-icon [ngClass]="{'in-leitner':inMyWord }" name="star"></ion-icon>
+                </div>
+                <!-- </ion-button> -->
+                <div (click)="addLitner()" class="back-icon">
+
+                    <ion-icon [ngClass]="{'in-leitner':isLeitner }" size="small" name="bulb-sharp"></ion-icon>
+                </div>
+            </div>
+
+            <div (click)="playAudio(vocab)" class="sound">
+                <div class="back-icon">
+
+                    <ion-icon size="small" name="volume-high"></ion-icon>
+                </div>
+            </div>
+
+            <!-- <audio autoplay src="https://translate.google.com/translate_tts?ie=UTF-8&q=animi&tl=en&total=1&idx=0&textlen=5&client=tw-ob&prev=input&ttsspeed=1"></audio> -->
+
+        </div>
+    </div>
+    <div class="pages">
+
+        <div *ngFor="let item of translations; index as i" class="page">
+            <section class="meanings">
+                <ion-item class="ion-no-border" lines="none">
+                    <ion-badge *ngIf="translations.length>1" mode="ios" slot="start" color={{color}}>{{i+1}}</ion-badge>
+                    <section class="text">
+                        <ion-text>
+                            <span class="ion-text-wrap"> {{item['translation_title']}}</span>
+                        </ion-text>
+                        <ion-text color="dark" class="usage">
+                            <span>{{usage[i]}}</span>
+                        </ion-text>
+                    </section>
+                </ion-item>
+            </section>
+
+            <section *ngIf=" (otherSituation[i]&& otherSituation[i].length!=0)||(otherSituation[i]['genitive']&&otherSituation[i]['plural'])||(otherSituation[i]['genitive'].toLowerCase()!=='null'&&otherSituation[i]['plural'].toLowerCase()!=='null')" class="Other-modes">
+                <!-- <ion-title class="ion-text-start" slot="start">حالات دیگر</ion-title> -->
+
+                <!-- class="Other-modes-cards" -->
+                <div>
+                    <!-- <ion-toolbar> -->
+                    <!-- <ion-grid>
+              <ion-row>
+                <ion-col  size="6"> -->
+                    <!-- class="Other-modes-card" -->
+                    <div class="ion-text-left ion-text-capitalize" *ngFor="let item of otherSituation[i]">
+                        <!-- color="light" -->
+                        <ion-text *ngIf="i === 0">
+                            <ion-label *ngIf="item['plural']&&item['plural'].toLowerCase()!=='null'||''"> plural: {{item['plural']}}</ion-label>
+                            <span *ngIf="item['genitive']&&item['genitive'].toLowerCase()!=='null'||''"> genitive: {{item['genitive']}}</span>
+                        </ion-text>
+
+                    </div>
+
+                    <!-- </ion-col>
+              </ion-row>
+            </ion-grid> -->
+                    <!-- </ion-toolbar> -->
+                </div>
+            </section>
+            <section *ngIf=" examples[i]&& examples[i].length!=0" class="examples">
+                <ion-title class="ion-text-start" slot="start">مثال ها</ion-title>
+                <ion-list inset="false" lines="none" fill="none">
+                    <!-- <div class="items"> -->
+                    <ion-item lines="full" fill="none" *ngFor="let example of examples[i];">
+                        <!-- <ion-toolbar> -->
+                        <!-- <ion-buttons   slot="start"> -->
+                        <button (click)="playAudio(example['example_body'])" class="ion-activatable ripple-parent" size="small" mode="md" shape="round" fill="none">
+							<ion-icon color="vocabulary-background" name="volume-high" size="default"></ion-icon>
+							<ion-ripple-effect type="unbounded"></ion-ripple-effect>
+						</button>
+
+                        <ion-text>
+                            <ion-label class="ion-text-wrap">{{example['example_body']}}</ion-label>
+                            <span class="translated-box">{{example['example_translation']}}</span>
+                        </ion-text>
+
+                    </ion-item>
+                    <!-- </div> -->
+
+
+                </ion-list>
+            </section>
+
+            <section *ngIf=" phrases[i]&& phrases[i].length!=0" class="examples">
+                <ion-title class="ion-text-start" slot="start"> عبارات کاربردی </ion-title>
+                <ion-list inset="false" lines="none" fill="none">
+                    <!-- <div class="items"> -->
+                    <ion-item lines="full" fill="none" *ngFor="let phrase of phrases[i];">
+                        <!-- <ion-toolbar> -->
+                        <!-- <ion-buttons   slot="start"> -->
+                        <button (click)="playAudio(phrase['de'])" class="ion-activatable ripple-parent" size="small" mode="md" shape="round" fill="none">
+							<ion-icon color="vocabulary-background" name="volume-high" size="default"></ion-icon>
+							<ion-ripple-effect type="unbounded"></ion-ripple-effect>
+						</button>
+
+                        <ion-text dir="ltr">
+                            <ion-label class="ion-text-wrap">{{phrase['de']}}</ion-label>
+                            <span>{{phrase['fa']}}</span>
+                        </ion-text>
+
+                    </ion-item>
+
+                    <!-- </div> -->
+
+
+                </ion-list>
+            </section>
+
+            <section *ngIf="false" class="spend-verb">
+                <ion-title class="ion-text-start" slot="start"> صرف فعل</ion-title>
+
+                <div class="spend-verb-cards">
+                    <!-- <ion-toolbar> -->
+                    <div *ngFor="let item of [1,2,3,4]" class="spend-verb-card">
+                        <ion-text class="ion-text-center ion-justify-content-center">
+
+                            <ion-label>er/es/sie</ion-label>
+                            <ion-label color="danger">sieht</ion-label>
+                        </ion-text>
+
+                    </div>
+                    <!-- </ion-toolbar> -->
+                </div>
+
+                <!-- <div  class="spend-verb-cards"> -->
+                <!-- <ion-toolbar> -->
+
+                <!-- <ion-grid>
+              <ion-row>
+                <ion-col size-sm="10" size-md="10" offset="1" *ngFor="let item of [1,2,3,4]"  size="5">
+                
+                      <div class="spend-verb-card">
+
+                <ion-text class="ion-text-center ion-justify-content-center">
+                
+                  <ion-label>er/es/sie</ion-label>
+                  <ion-label color="danger">sieht</ion-label>
+                </ion-text>
+
+              </div>
+                </ion-col>
+     
+              </ion-row>
+            </ion-grid> -->
+
+                <!-- </ion-toolbar> -->
+                <!-- </div> -->
+            </section>
+
+
+            <div id="audioDiv" class="audio">
+
+
+            </div>
+
+
+            <!-- <audio src="https://translate.google.com/translate_tts?ie=UTF-8&amp;q=spazieren%20gehen&amp;tl=de&amp;total=1&amp;idx=0&amp;textlen=10&amp;client=tw-ob&amp;prev=input&amp;ttsspeed=1" type="audio/mpeg"></audio> -->
+            <!-- <audio controls>
+        <source [src]="audioSrc" type="audio/ogg">
+        <source [src]="audioSrc" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio> -->
+            <!-- <audio controls>
+        <source src="/assets/translate_tts.mp3" type="audio/ogg">
+        <source src="/assets/translate_tts.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio> -->
+            <!-- <audio  src="https://translate.google.com/translate_tts?ie=UTF-8&q=hallo&tl=en&total=1&idx=0&textlen=5&client=tw-ob&prev=input&ttsspeed=1" type="audio/mpeg" autoplay></audio> -->
+            <!-- <a href="https://translate.google.com/translate_tts?ie=UTF-8&q=hallo&tl=en&total=1&idx=0&textlen=5&client=tw-ob&prev=input&ttsspeed=1" download>{{'https://translate.google.com/translate_tts?ie=UTF-8&q=hallo&tl=en&total=1&idx=0&textlen=5&client=tw-ob&prev=input&ttsspeed=1'=='https://translate.google.com/translate_tts?ie=UTF-8&q=hallo&tl=en&total=1&idx=0&textlen=5&client=tw-ob&prev=input&ttsspeed=1'}}</a> -->
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- <audio controls [src]="audioSrc" /> -->

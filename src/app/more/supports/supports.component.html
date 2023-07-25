@@ -1,0 +1,94 @@
+
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar color="mywords-background">
+    <ion-buttons   slot="start">
+      <!-- <ion-button  >
+          <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+      </ion-button> -->
+  
+      <ion-back-button
+      [defaultHref]="'/more'"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>پشتیبانی</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+
+
+<ion-content>
+
+  
+  <div  *ngIf="count==0" class="dontHaveSupports">
+
+      <ion-img [src]="'/assets/img/question.png'"></ion-img>
+      <!-- <ion-title></ion-title> -->
+      <ion-text color="primary">
+        <h1>
+          درخواستی برای شما ثبت نشد
+        </h1>
+      </ion-text>
+   <ion-button (click)="openAddSupportModal()" expand="block" shape="round">
+    ثبت درخواست جدید
+   </ion-button>
+  </div>
+  
+  <div  *ngIf="count!=0" class="haveSupports">
+    
+    <ion-list>
+      <div class="item" *ngFor="let item of dataArray">
+        <ion-item *ngIf="item['id']" class="answered" lines="none"  [ngClass]="{'waiting':item['status']==0,'answered-admin':item['status']==1,'answered-usr':item['status']==2,'close':item['status']==3}"  [routerLink]="[item['id']]"  detail button>
+      
+        <ion-grid >
+          <ion-row>
+            <ion-col size="7">
+              <div class="detail ">
+                  <ion-label>{{item['title']}}</ion-label>
+                  <ion-chip color="primary" mode="ios" >
+                    <ion-label>{{item['status_text']}}</ion-label>
+                  </ion-chip>
+                </div>
+            </ion-col>
+            <ion-col size="5">
+              <div class="date">
+                <ion-note>{{item['c_date']}}</ion-note>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+
+      </ion-item>
+      </div>
+      
+
+      <!-- <ion-infinite-scroll *ngIf="!(this.dataArray.length==this.count||isEnd)"   (ionInfinite)="loadData($event)" position='bottom'  threshold="15">
+        <ion-infinite-scroll-content
+          loadingSpinner="lines-sharp-small"
+          loadingText="لطفا صبر کنید ...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll> -->
+   
+        
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="لطفا صبر کنید...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+   
+    </ion-list>
+  </div>
+  <ion-fab *ngIf="count!=0"  vertical="bottom" horizontal="end"  slot="fixed">
+    <ion-fab-button (click)="openAddSupportModal()" color="mywords-background" >
+      <ion-icon  size="large" name="add"></ion-icon>
+    </ion-fab-button>
+    
+  </ion-fab>
+
+
+</ion-content>

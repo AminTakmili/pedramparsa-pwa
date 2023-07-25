@@ -1,0 +1,193 @@
+@import '../../../theme/extend';
+
+
+.all-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .statistics{
+
+    flex:1 0 10%;
+    display: flex;
+    flex-direction: row;
+
+    .study{
+
+        flex-grow: 1;
+        background-color: var(--ion-color-light);
+        margin: .5rem ;
+        border-radius: 15px;
+        @extend %box-shadow-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+    }
+    .lerning{
+
+        flex-grow: 1;
+        background-color: var(--ion-color-light);
+        margin: .5rem ;
+        border-radius: 15px;
+        @extend %box-shadow-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    }
+    .main-content{
+        flex: 2 0 70%;
+        // height: 90%;
+        // width: 100%;
+        margin: .7rem;
+        padding: 1rem;
+        border-radius: 15px;
+        background-color: var(--ion-color-light);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        // display: flex;
+        // // align-items: center;
+        // justify-content: center;
+        
+        @extend %box-shadow-1;
+
+        ion-title{
+            color: #707070;
+            flex: 1 0 9%;
+            min-height: 84px;
+            max-height: 104px;
+        }
+        ion-text{
+            display: flex;
+            width: 90%;
+            margin: 15px auto;
+            flex: 1 0 10%;
+            // max-height: 30px;
+            flex-wrap: wrap;
+            // min-height: 20px;
+        }
+        .word-input-text{
+            margin: 2rem auto;
+            letter-spacing: 20px;
+           
+        }
+        .main-card{
+            width: 100%;
+            height: 100%;
+            background-color: var(--ion-color-light);
+          
+            // border-radius: 15px;
+            margin-bottom: 5px;
+            // @extend %box-shadow-1;
+            margin: 5px 0 ;
+            border-radius: 15px;
+            flex: 2 0 40%;
+            // max-height: 160px;
+            min-height: 110px;
+      
+            ion-card{
+              // box-shadow:native ;
+              box-shadow: none !important;
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 1rem 0;
+              text-align: center;
+              line-height: 2;
+              background-color: #E6E6E6;
+              border-radius: 15px;
+              .buttons{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                ion-button {
+                     /* width: 40px; */
+                    --padding-bottom: 0;
+                    --padding-top: 0;
+                    --padding-start: 0;
+                    --padding-end: 0;
+                    /* height: 76px; */
+                    max-height: 28px;
+                    margin: 1rem;
+                    max-width: 30px;
+                    /* border-radius: 50%; */
+                    --border-radius: 10px;
+                    align-items: baseline;
+                    text-align: center;
+                }
+                
+              }
+              
+            }
+            .icons{
+              display: flex;
+              justify-content: space-between;
+              bottom: 30px;
+              position: relative;
+              // position: absolute;
+             
+              .sound{
+                // right: 3px;
+                flex-grow: 1;
+              }
+              .close{
+                margin: 0 10px;
+                display: flex;
+                justify-content: start;
+                flex-grow: 25;
+                ion-icon{
+                  background-color: var(--ion-color-danger);
+                }
+
+              }
+              .back-icon{
+      
+                @extend %icon-desine-1
+              }
+              
+            }
+      
+          }
+          ion-button{
+            max-height: 37px;
+            min-height: 35px;
+            margin: 20px 0 5px 0;
+            flex: 1 0 8%;
+            width: 123px;
+            --background: #495769;
+          }
+        
+    }
+
+}
+.wrong {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  5% { transform: translate(0px, -1px) rotate(-0.50deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

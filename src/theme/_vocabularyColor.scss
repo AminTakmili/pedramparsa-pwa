@@ -1,0 +1,110 @@
+:root {
+	// د
+	--ion-color-verb-color: #ffbb4e;
+	--ion-color-verb-color-rgb: 255,187,78;
+	--ion-color-verb-color-contrast: #ffffff;
+	--ion-color-verb-color-contrast-rgb: 225,225,225;
+	--ion-color-verb-color-shade: #e0a545;
+	--ion-color-verb-color-tint: #ffc260;
+
+    --ion-color-die-color:var(--ion-color-danger) ;
+	--ion-color-die-color-rgb: var(--ion-color-danger-rgb);
+	--ion-color-die-color-contrast: var(--ion-color-danger-contrast);
+	--ion-color-die-color-contrast-rgb: var(--ion-color-danger-contrast-rgb);
+	--ion-color-die-color-shade: var(--ion-color-danger-shade);
+	--ion-color-die-color-tint: var(--ion-color-danger-tint);
+	
+	--ion-color-der-color: #3FAED1;
+	--ion-color-der-color-rgb: 63,174,209;
+	--ion-color-der-color-contrast: #FFFFFF;
+	--ion-color-der-color-contrast-rgb: 225,225,225;
+	--ion-color-der-color-shade: #3799b8;
+	--ion-color-der-color-tint: #52b6d6;
+
+	// adjective
+	--ion-color-adjective-color: #A972B5;
+	--ion-color-adjective-color-rgb: 169,114,181;
+	--ion-color-adjective-color-contrast: #FFFFFF;
+	--ion-color-adjective-color-contrast-rgb: 225,225,225;
+	--ion-color-adjective-color-shade: #95649f;
+	--ion-color-adjective-color-tint: #b280bc;
+	// dec Adjektiv
+	--ion-color-Adjektiv-color: #A972B5;
+	--ion-color-Adjektiv-color-rgb: 169,114,181;
+	--ion-color-Adjektiv-color-contrast: #FFFFFF;
+	--ion-color-Adjektiv-color-contrast-rgb: 225,225,225;
+	--ion-color-Adjektiv-color-shade: #95649f;
+	--ion-color-Adjektiv-color-tint: #b280bc;
+
+	--ion-color-das-color: #8DBB7F;
+	--ion-color-das-color-rgb: 141,187,127;
+	--ion-color-das-color-contrast: #FFFFFF;
+	--ion-color-das-color-contrast-rgb: 225,225,225;
+	--ion-color-das-color-shade: #7ca570;
+	--ion-color-das-color-tint: #98c28c;
+
+	--ion-color-default: #00f0e0;
+	--ion-color-default-rgb: 0,240,224;
+	--ion-color-default-contrast: #000000;
+	--ion-color-default-contrast-rgb: 0,0,0;
+	--ion-color-default-shade: #00d3c5;
+	--ion-color-default-tint: #1af2e3;
+}
+
+.ion-color-das-color {
+	--ion-color-base: var(--ion-color-das-color);
+	--ion-color-base-rgb: var(--ion-color-das-color-rgb);
+	--ion-color-contrast: var(--ion-color-das-color-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-das-color-contrast-rgb);
+	--ion-color-shade: var(--ion-color-das-color-shade);
+	--ion-color-tint: var(--ion-color-das-color-tint);
+}
+.ion-color-die-color {
+	--ion-color-base: var(--ion-color-die-color);
+	--ion-color-base-rgb: var(--ion-color-die-color-rgb);
+	--ion-color-contrast: var(--ion-color-die-color-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-die-color-contrast-rgb);
+	--ion-color-shade: var(--ion-color-die-color-shade);
+	--ion-color-tint: var(--ion-color-die-color-tint);
+}
+.ion-color-der-color {
+	--ion-color-base: var(--ion-color-der-color);
+	--ion-color-base-rgb: var(--ion-color-der-color-rgb);
+	--ion-color-contrast: var(--ion-color-der-color-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-der-color-contrast-rgb);
+	--ion-color-shade: var(--ion-color-der-color-shade);
+	--ion-color-tint: var(--ion-color-der-color-tint);
+}
+.ion-color-adjective-color {
+	--ion-color-base: var(--ion-color-adjective-color);
+	--ion-color-base-rgb: var(--ion-color-adjective-color-rgb);
+	--ion-color-contrast: var(--ion-color-adjective-color-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-adjective-color-contrast-rgb);
+	--ion-color-shade: var(--ion-color-adjective-color-shade);
+	--ion-color-tint: var(--ion-color-adjective-color-tint);
+}
+.ion-color-Adjektiv-color {
+	--ion-color-base: var(--ion-color-adjective-color);
+	--ion-color-base-rgb: var(--ion-color-adjective-color-rgb);
+	--ion-color-contrast: var(--ion-color-adjective-color-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-adjective-color-contrast-rgb);
+	--ion-color-shade: var(--ion-color-adjective-color-shade);
+	--ion-color-tint: var(--ion-color-adjective-color-tint);
+}
+.ion-color-verb-color {
+	--ion-color-base: var(--ion-color-verb-color);
+	--ion-color-base-rgb: var(--ion-color-verb-color-rgb);
+	--ion-color-contrast: var(--ion-color-verb-color-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-verb-color-contrast-rgb);
+	--ion-color-shade: var(--ion-color-verb-color-shade);
+	--ion-color-tint: var(--ion-color-verb-color-tint);
+}
+
+.ion-color-default {
+	--ion-color-base: var(--ion-color-default);
+	--ion-color-base-rgb: var(--ion-color-default-rgb);
+	--ion-color-contrast: var(--ion-color-default-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-default-contrast-rgb);
+	--ion-color-shade: var(--ion-color-default-shade);
+	--ion-color-tint: var(--ion-color-default-tint);
+}

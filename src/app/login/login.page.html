@@ -1,0 +1,101 @@
+<ion-header *ngFor="let item of headerTuple; index as i;" class="ion-no-border">
+	<ion-toolbar *ngIf="item[0]===checkIdTupelHeder">
+		<ion-buttons (click)="backButtonHandeler()" slot="start">
+			<ion-button [disabled]="item[3]">
+				<ion-icon slot="icon-only" [name]="item[2]"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+		<ion-title>{{item[1]}}</ion-title>
+	</ion-toolbar>
+
+</ion-header>
+
+<ion-content [ngSwitch]="checkIdTupelHeder" forceOverscroll=false>
+
+	<div *ngSwitchCase="0"  class="inter_call" >
+		<form [formGroup]="loginForm" (submit)="SubmitLoginForm()">
+			<ion-img [alt]="'image of phone number in login forme'" [src]="'../../assets/img/Group 7293@2x.png'">
+			</ion-img>
+			<section ngClass="content">
+				<p>شماره تلفن همراه خود را وارد کنید</p>
+				<ion-input  autocapitalize="characters"   (keyup)='global.justNumber($event)' [pattern]="mobilePattern" type="text"  formControlName="mobile" ngClass="line_input" #phoneNumberinput  [autofocus]="true" placeholder=" 09*********">
+				</ion-input>
+        <app-validator [control]="loginForm.controls['mobile']" [controlName]="'شماره همراه'"></app-validator>
+				<ion-button (click)="SubmitLoginForm()" ngClass="btn" [color]="'primary'" shape="round">ادامه
+				</ion-button>
+			</section>
+		</form>
+	</div>
+	<div *ngSwitchCase="1">
+
+		<form [formGroup]="sendCode" (submit)="sendsendCodeForm()" class="login_sms_code">
+		<ion-img [alt]="'image of check code in login forme'" [src]="'../../assets/img/Group 7290@2x.png'"></ion-img>
+		<section ngClass="content">
+			<p class="ion-text-center send_code_text"> کد فعالسازی ارسال شده به شماره {{mobile}} را وارد کنید
+			</p>
+			<div class="input_contaner">
+				<div class="border_input">
+					<ion-input  ngClass="line_input" [autofocus]="true"  formControlName="code"  maxlength="5" minlength="5" placeholder="*****"(keyup)="changeCodeInput($event)">
+					</ion-input>
+
+				</div>
+
+			</div>
+			<span *ngIf="!(time=='00:00'||ReSend)" class="timer"><a>ارسال مجدد کد</a> ( {{time!}} )</span>
+			<!-- <ion-button *ngIf="!(time=='00:00'||ReSend)" (click)="sendsendCodeForm()" ngClass="btn" [color]="'primary'" shape="round">ادامه
+			</ion-button> -->
+			<ion-button  *ngIf="time=='00:00'||ReSend" (click)="SubmitLoginForm(true)" ngClass="btn" color="danger" shape="round">ارسال مجدد 
+			</ion-button>
+		</section>
+		</form>
+	</div>
+
+	<div *ngSwitchCase="2" class="inter-name">
+		<form [formGroup]="registerForme" (submit)="registerButtonHandeler()" class="inter_call">
+
+			<ion-img [alt]="'image of phone number in login forme'" [src]="'../../assets/img/Group 7291@2x.png'"></ion-img>
+			<section ngClass="content">
+				<ion-item>
+					<ion-label position="floating">نام و نام خانوادگی </ion-label>
+					<ion-input  formControlName="full_name" [autofocus]="true"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label  position="floating"> شماره همراه معرف</ion-label>
+					<ion-input  formControlName="introducer_mobile"></ion-input>
+				</ion-item>
+
+				<ion-item lines="none">
+					<app-validator [control]="registerForme.controls['full_name']" [controlName]="'نام '"></app-validator>
+					<app-validator [control]="registerForme.controls['introducer_mobile']" [controlName]="'شماره همراه معرف  '"></app-validator>
+				</ion-item>
+	<!-- (click)="handelLoginNavButton()"  -->
+				<ion-button type="submit" ngClass="btn" [color]="'primary'" shape="round">ادامه
+				</ion-button>
+			</section>
+		</form>
+	</div>
+	<div *ngSwitchCase="3" class="rules">
+
+		<section class="rules-card">
+			<ion-img [alt]="'image of rules card in login forme'" [src]="'../../assets/img/Group 7292@2x.png'">
+			</ion-img>
+			<ion-text  [innerHTML]="ruleInnerHtml">
+				
+			</ion-text>
+
+		</section>
+
+		<ion-list>
+			<ion-item lines="none" fill="outline">
+				<ion-label>تمامی قوانین و ضوابط را خوانده ام و میپذیرم</ion-label>
+				<ion-checkbox [(ngModel)]="ischeck" #checkAcsept slot="start"></ion-checkbox>
+
+			</ion-item>
+		</ion-list>
+		<ion-button [disabled]="!ischeck" (click)="acceptRule()" ngClass="btn" [color]="'primary'"
+			shape="round">ادامه</ion-button>
+
+	</div>
+
+
+</ion-content>

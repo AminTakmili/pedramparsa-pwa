@@ -1,0 +1,14 @@
+ion-content{
+    ion-grid{
+        direction: ltr;
+
+        h2 {
+            font-size: 22px;
+            width: auto;
+            margin: 25px 0;
+            font-weight: 600;
+            border-bottom: 2px solid var(--ion-color-secondary);
+            display: inline-block;
+        }
+    }
+}

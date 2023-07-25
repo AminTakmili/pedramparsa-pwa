@@ -1,0 +1,54 @@
+@import '../../../theme/extend';
+ion-title{
+    margin-top: 2rem;
+}
+
+ion-item {
+// font-size: 1.6rem;
+width: 90%;
+@extend %box-shadow-1;
+border-radius: 15px;
+margin: 2rem 1rem;
+}
+.no-data{
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    ion-img{
+      max-width: 370px;
+      margin: 0 auto;
+    }
+  }
+
+  .loading{
+    .titel-loding{
+      width: 100px;
+      height: 9px;
+      right: -70%;
+      /* left: 167%; */
+      top: 39%;
+      border-radius: 2px;
+      min-width: 96px;
+      min-height: 6px;
+    }
+ 
+  
+      .loding-card{
+        display: flex;
+        width: 120%;
+        height: 50px;
+        min-width: 25px;
+        min-height: 20px;
+        border-radius: 15px;
+          margin: 15px 0;
+       
+        }
+       
+    
+  
+   
+  }

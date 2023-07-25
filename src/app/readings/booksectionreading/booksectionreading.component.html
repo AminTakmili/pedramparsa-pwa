@@ -1,0 +1,35 @@
+
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar color="readings-background">
+    <ion-buttons   slot="start">
+      <ion-back-button
+      [defaultHref]="'home/readings'"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+
+
+<ion-content>
+  <ion-label *ngIf="data&&data.length!=0" class="ion-padding ion-margin-top"> لیست دروس:</ion-label>
+  <ion-list  *ngIf="data&&data.length!=0" > 
+    <app-sectionlist  *ngFor="let item of data " [data]="item" [type]="'readings'" ></app-sectionlist>
+    <app-sectionlist   *ngIf="(!data||data.length==0)"  [loading]="loading"  ></app-sectionlist>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="لطفا صبر کنید...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>
+    
+  <app-sectionlist  *ngIf="!data||data.length==0" ></app-sectionlist>
+  
+</ion-content>

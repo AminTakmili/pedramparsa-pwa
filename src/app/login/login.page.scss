@@ -1,0 +1,172 @@
+// @import '../../theme/custom';
+@import '../../theme/extend';
+
+@mixin  card_gnral-style{
+  height: 98vh;
+  display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+flex-wrap: nowrap;
+flex-direction: column;
+ion-img{
+  // flex: 0 0 40%;
+  // min-height: 200px;
+  // height: 50%;
+  // max-height: 250px;
+  // // width: 210px;
+  // // width: 300px;
+  // object-fit: cover;
+  max-height: 240px;
+  object-fit: cover;
+  flex: 0 0 231px;
+
+
+ 
+}
+.content{
+  flex: 0 0 auto;
+  display: contents;
+
+}
+}
+
+.inter_call{
+  height: 100%;
+form{
+height: 100% !important;
+  @include card_gnral-style;
+
+
+  p{
+      color: var(--ion-color-primary);
+  }
+ 
+  ion-button{
+      margin-top: 20px;
+  }
+}
+}
+.login_sms_code{
+  @include card_gnral-style;
+
+.send_code_text{
+  padding: 1rem;
+  margin: 0;
+
+}
+  .timer{
+    font-size: 1.3rem;
+    color: var(--ion-color-medium);
+    // text-align: right;
+    // align-self: start;
+    padding: 1.5rem;
+  }
+  ion-input{
+      text-align: start;
+      letter-spacing:40px ;
+      border-bottom: none !important;
+    
+      width:90%;
+      padding: 0 !important;
+
+    }
+
+
+.input_contaner{
+  overflow: hidden;
+  width: 250px;
+  .border_input{
+        background-image: linear-gradient(90deg,#fff 50%,var(--ion-color-medium)0);
+        // background-position: 44px bottom;
+        // background-size: 46px 1px;
+        background-position: 45px bottom;
+         background-size: 46px 1px;
+        background-repeat: repeat-x;
+        // height: 1px;
+        height: 50px;
+        margin-bottom: 10px;
+        position: relative;
+        // width: 250px;
+        
+}
+}
+    }
+
+
+  .inter-name{
+    @include card_gnral-style;
+    form{
+      height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    }
+    
+    ion-item{
+      width: 60%;
+      color: var(--ion-color-medium) ;
+      ion-label{
+        color: var(--ion-color-medium) ;
+      }
+      margin-bottom: 2rem;
+    }
+
+
+  }
+  .rules{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    .rules-card{
+      
+      // box-shadow: 0px 5px 15px 5px rgb(0 0 0 / 15%);
+      // border-radius: 15px;
+      // background-color: #FFFFFF;
+      // width: 50%;
+      // height: 90%;
+      position: relative;
+      background-color: var(--ion-color-light);
+      display: flex;
+    // align-items: center;
+    margin: 2rem 0;
+    justify-content: center;
+    height: 50vh;
+    width: 80vw;
+    border-radius: 15px;
+    // box-shadow: 0px 5px 15px 5px rgb(0 0 0 / 15%);
+    @extend %box-shadow-1;
+    ion-img{
+      position: absolute;
+      bottom: 72%;
+      width: 62%;
+      height: 60%;
+      max-width: 200px;
+      max-height:200px;
+      object-fit: cover;
+    }
+    ion-text {   
+       padding: 15% 10px 10px 10px;
+      p{
+
+        overflow-y: scroll;
+        height: 88%;
+        padding: 1.5rem;
+        line-height: 2;
+        text-align: justify;
+      }
+    }
+
+  }
+  
+  }
+  
+
+// ion-icon{
+
+// }
+

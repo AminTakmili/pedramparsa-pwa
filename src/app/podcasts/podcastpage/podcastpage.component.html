@@ -1,0 +1,52 @@
+
+<ion-header class="ion-no-border">
+  
+  <!-- <ion-toolbar >
+    <ion-title>گرامرها</ion-title>
+  </ion-toolbar>
+
+   -->
+  <ion-toolbar color="audiobooks-background">
+    <ion-buttons   slot="start">
+      <ion-back-button
+      [defaultHref]="'home/podcasts/'+bookId+'/'+lessonId"
+      [text]=""
+      [icon]="'arrow-back-outline'">
+  </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+<ion-content>
+
+  <ion-text color="primary"  [innerHtml]="html">
+
+  </ion-text>
+
+</ion-content>
+<!-- <ion-footer collapse="fade">
+
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-footer *ngIf="audioSrc" class="ion-no-border">
+  
+  <ion-toolbar>
+    <audio controls>
+      <source [src]="audioSrc" type="audio/mpeg">
+      مرورگر شما صدا را پشتیبانی نمی‌کند
+    </audio>
+    <!-- <ion-buttons   slot="start">
+        <ion-button  >
+            <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>گرامرها</ion-title> -->
+  </ion-toolbar>
+  
+
+</ion-footer>

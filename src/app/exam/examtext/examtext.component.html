@@ -1,0 +1,71 @@
+
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar color="exams-background">
+    <ion-buttons  [routerLink]="['/home/exam',book_id,id]" slot="start">
+        <ion-button  >
+            <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+  
+
+</ion-header>
+
+<ion-content>
+
+
+  <ion-fab (click)="zoomIn()" vertical="center" horizontal="start" slot="fixed">
+    <ion-fab-button color="exams-background" [disabled]=zoomInDisabled size="small">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab   (click)="zoomOut()" class="zoom-out" vertical="center"  horizontal="start" slot="fixed">
+    <ion-fab-button color="exams-background" [disabled]=zoomOutDisabled size="small">
+      <ion-icon name="remove-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+  <div *ngIf="pdfSrc&&pdfSrc!=''" class="pdf">
+
+    <pdf-viewer 
+    [src]=pdfSrc
+    [render-text]="true"
+    [original-size]="true"
+    [zoom]=zoomNumber
+    
+  ></pdf-viewer>
+  </div>
+  <div *ngIf="(!pdfSrc||pdfSrc=='')&&html&&html!=''" class="text">
+<ion-text color="dark" [innerHtml]="html">
+</ion-text>
+  </div>
+
+</ion-content>
+<!-- <ion-footer collapse="fade">
+
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-footer *ngIf="audioSrc" class="ion-no-border">
+  
+  <ion-toolbar>
+    <audio controls>
+      <source [src]="audioSrc" type="audio/mpeg">
+      مرورگر شما صدا را پشتیبانی نمی‌کند
+    </audio>
+    <!-- <ion-buttons   slot="start">
+        <ion-button  >
+            <ion-icon  slot="icon-only" [name]="'arrow-back-outline'"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>گرامرها</ion-title> -->
+  </ion-toolbar>
+  
+
+</ion-footer>
